@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-
+#import "CameraViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,13 +19,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    ViewController *cvc = [[ViewController alloc] init];
+    ViewController *vvc = [[ViewController alloc] init];
     
-    /*
+  
     //need to alloc a controller for each view here
-    ItemViewController *wvc = [[ItemViewController alloc] init];
-    cvc.itemViewController = wvc;
+   CameraViewController *cvc = [[CameraViewController alloc] init];
+   vvc.cameraViewController = cvc;
     
+    
+      /*
     InfoViewController *bnr = [[InfoViewController alloc] init];
     cvc.infoViewController = bnr;
     
@@ -43,7 +45,7 @@
      
      */
     
-    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:cvc];
+    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:vvc];
     
     //create the look for nav bar across views
     [[UINavigationBar appearance] setBarTintColor:[UIColor greenColor]];

@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		830B8ED01B09B8670013C36A /* CustomerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830B8ECE1B09B8670013C36A /* CustomerViewController.m */; };
-		830B8ED11B09B8670013C36A /* CustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 830B8ECF1B09B8670013C36A /* CustomerViewController.xib */; };
+		830B8ED41B0A50830013C36A /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830B8ED31B0A50830013C36A /* CameraViewController.m */; };
+		830B8ED81B0A59A00013C36A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830B8ED61B0A59A00013C36A /* ViewController.m */; };
+		830B8ED91B0A59A00013C36A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 830B8ED71B0A59A00013C36A /* ViewController.xib */; };
 		8390F9AE1B0955C40048D6C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9AD1B0955C40048D6C3 /* main.m */; };
 		8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9B01B0955C40048D6C3 /* AppDelegate.m */; };
-		8390F9B41B0955C40048D6C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9B31B0955C40048D6C3 /* ViewController.m */; };
-		8390F9B71B0955C40048D6C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9B51B0955C40048D6C3 /* Main.storyboard */; };
 		8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9B81B0955C40048D6C3 /* Images.xcassets */; };
 		8390F9BC1B0955C40048D6C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9BA1B0955C40048D6C3 /* LaunchScreen.xib */; };
 		8390F9C81B0955C40048D6C3 /* DriveProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9C71B0955C40048D6C3 /* DriveProjectTests.m */; };
@@ -35,17 +34,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		830B8ECD1B09B8670013C36A /* CustomerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerViewController.h; sourceTree = "<group>"; };
-		830B8ECE1B09B8670013C36A /* CustomerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerViewController.m; sourceTree = "<group>"; };
-		830B8ECF1B09B8670013C36A /* CustomerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerViewController.xib; sourceTree = "<group>"; };
+		830B8ED21B0A50830013C36A /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		830B8ED31B0A50830013C36A /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		830B8ED51B0A59A00013C36A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		830B8ED61B0A59A00013C36A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		830B8ED71B0A59A00013C36A /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		8390F9A81B0955C40048D6C3 /* DriveProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390F9AC1B0955C40048D6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390F9AD1B0955C40048D6C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8390F9AF1B0955C40048D6C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8390F9B01B0955C40048D6C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8390F9B21B0955C40048D6C3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8390F9B31B0955C40048D6C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8390F9B61B0955C40048D6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8390F9B81B0955C40048D6C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		8390F9BB1B0955C40048D6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		8390F9C11B0955C40048D6C3 /* DriveProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,15 +108,14 @@
 				8390F9D51B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib */,
 				8390F9AF1B0955C40048D6C3 /* AppDelegate.h */,
 				8390F9B01B0955C40048D6C3 /* AppDelegate.m */,
-				8390F9B21B0955C40048D6C3 /* ViewController.h */,
-				830B8ECD1B09B8670013C36A /* CustomerViewController.h */,
-				830B8ECE1B09B8670013C36A /* CustomerViewController.m */,
-				830B8ECF1B09B8670013C36A /* CustomerViewController.xib */,
-				8390F9B31B0955C40048D6C3 /* ViewController.m */,
-				8390F9B51B0955C40048D6C3 /* Main.storyboard */,
+				830B8ED21B0A50830013C36A /* CameraViewController.h */,
+				830B8ED31B0A50830013C36A /* CameraViewController.m */,
 				8390F9B81B0955C40048D6C3 /* Images.xcassets */,
 				8390F9BA1B0955C40048D6C3 /* LaunchScreen.xib */,
 				8390F9AB1B0955C40048D6C3 /* Supporting Files */,
+				830B8ED51B0A59A00013C36A /* ViewController.h */,
+				830B8ED61B0A59A00013C36A /* ViewController.m */,
+				830B8ED71B0A59A00013C36A /* ViewController.xib */,
 			);
 			path = DriveProject;
 			sourceTree = "<group>";
@@ -229,11 +226,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830B8ED91B0A59A00013C36A /* ViewController.xib in Resources */,
 				8390F9D61B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib in Resources */,
-				8390F9B71B0955C40048D6C3 /* Main.storyboard in Resources */,
 				8390F9BC1B0955C40048D6C3 /* LaunchScreen.xib in Resources */,
 				8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */,
-				830B8ED11B09B8670013C36A /* CustomerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,8 +247,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				830B8ED01B09B8670013C36A /* CustomerViewController.m in Sources */,
-				8390F9B41B0955C40048D6C3 /* ViewController.m in Sources */,
+				830B8ED41B0A50830013C36A /* CameraViewController.m in Sources */,
+				830B8ED81B0A59A00013C36A /* ViewController.m in Sources */,
 				8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */,
 				8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */,
 				8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */,
@@ -280,14 +276,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8390F9B51B0955C40048D6C3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8390F9B61B0955C40048D6C3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8390F9BA1B0955C40048D6C3 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
