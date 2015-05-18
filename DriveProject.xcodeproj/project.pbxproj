@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8390F9AE1B0955C40048D6C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9AD1B0955C40048D6C3 /* main.m */; };
+		8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9B01B0955C40048D6C3 /* AppDelegate.m */; };
+		8390F9B41B0955C40048D6C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9B31B0955C40048D6C3 /* ViewController.m */; };
+		8390F9B71B0955C40048D6C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9B51B0955C40048D6C3 /* Main.storyboard */; };
+		8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9B81B0955C40048D6C3 /* Images.xcassets */; };
+		8390F9BC1B0955C40048D6C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9BA1B0955C40048D6C3 /* LaunchScreen.xib */; };
+		8390F9C81B0955C40048D6C3 /* DriveProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9C71B0955C40048D6C3 /* DriveProjectTests.m */; };
+		8390F9D21B09560F0048D6C3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8390F9D11B09560F0048D6C3 /* Security.framework */; };
+		8390F9D41B09561D0048D6C3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8390F9D31B09561D0048D6C3 /* SystemConfiguration.framework */; };
+		8390F9D61B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9D51B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib */; };
+		8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9D71B0959180048D6C3 /* GTLCommon_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8390F9DA1B0959240048D6C3 /* GTLNetworking_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9D91B0959240048D6C3 /* GTLNetworking_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9DC1B09596A0048D6C3 /* GTLDrive_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8390F9C21B0955C40048D6C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8390F9A01B0955C40048D6C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8390F9A71B0955C40048D6C3;
+			remoteInfo = DriveProject;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8390F9A81B0955C40048D6C3 /* DriveProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8390F9AC1B0955C40048D6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8390F9AD1B0955C40048D6C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8390F9AF1B0955C40048D6C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8390F9B01B0955C40048D6C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8390F9B21B0955C40048D6C3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8390F9B31B0955C40048D6C3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8390F9B61B0955C40048D6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8390F9B81B0955C40048D6C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8390F9BB1B0955C40048D6C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8390F9C11B0955C40048D6C3 /* DriveProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DriveProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8390F9C61B0955C40048D6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8390F9C71B0955C40048D6C3 /* DriveProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DriveProjectTests.m; sourceTree = "<group>"; };
+		8390F9D11B09560F0048D6C3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		8390F9D31B09561D0048D6C3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8390F9D51B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTMOAuth2ViewTouch.xib; sourceTree = "<group>"; };
+		8390F9D71B0959180048D6C3 /* GTLCommon_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLCommon_Sources.m; sourceTree = "<group>"; };
+		8390F9D91B0959240048D6C3 /* GTLNetworking_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLNetworking_Sources.m; sourceTree = "<group>"; };
+		8390F9DB1B09595F0048D6C3 /* GTLDrive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLDrive.h; sourceTree = "<group>"; };
+		8390F9DC1B09596A0048D6C3 /* GTLDrive_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLDrive_Sources.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8390F9A51B0955C40048D6C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8390F9D41B09561D0048D6C3 /* SystemConfiguration.framework in Frameworks */,
+				8390F9D21B09560F0048D6C3 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8390F9BE1B0955C40048D6C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8390F99F1B0955C40048D6C3 = {
+			isa = PBXGroup;
+			children = (
+				8390F9D31B09561D0048D6C3 /* SystemConfiguration.framework */,
+				8390F9D11B09560F0048D6C3 /* Security.framework */,
+				8390F9AA1B0955C40048D6C3 /* DriveProject */,
+				8390F9C41B0955C40048D6C3 /* DriveProjectTests */,
+				8390F9A91B0955C40048D6C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8390F9A91B0955C40048D6C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8390F9A81B0955C40048D6C3 /* DriveProject.app */,
+				8390F9C11B0955C40048D6C3 /* DriveProjectTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8390F9AA1B0955C40048D6C3 /* DriveProject */ = {
+			isa = PBXGroup;
+			children = (
+				8390F9DB1B09595F0048D6C3 /* GTLDrive.h */,
+				8390F9D71B0959180048D6C3 /* GTLCommon_Sources.m */,
+				8390F9DC1B09596A0048D6C3 /* GTLDrive_Sources.m */,
+				8390F9D91B0959240048D6C3 /* GTLNetworking_Sources.m */,
+				8390F9D51B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib */,
+				8390F9AF1B0955C40048D6C3 /* AppDelegate.h */,
+				8390F9B01B0955C40048D6C3 /* AppDelegate.m */,
+				8390F9B21B0955C40048D6C3 /* ViewController.h */,
+				8390F9B31B0955C40048D6C3 /* ViewController.m */,
+				8390F9B51B0955C40048D6C3 /* Main.storyboard */,
+				8390F9B81B0955C40048D6C3 /* Images.xcassets */,
+				8390F9BA1B0955C40048D6C3 /* LaunchScreen.xib */,
+				8390F9AB1B0955C40048D6C3 /* Supporting Files */,
+			);
+			path = DriveProject;
+			sourceTree = "<group>";
+		};
+		8390F9AB1B0955C40048D6C3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8390F9AC1B0955C40048D6C3 /* Info.plist */,
+				8390F9AD1B0955C40048D6C3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8390F9C41B0955C40048D6C3 /* DriveProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				8390F9C71B0955C40048D6C3 /* DriveProjectTests.m */,
+				8390F9C51B0955C40048D6C3 /* Supporting Files */,
+			);
+			path = DriveProjectTests;
+			sourceTree = "<group>";
+		};
+		8390F9C51B0955C40048D6C3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8390F9C61B0955C40048D6C3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8390F9A71B0955C40048D6C3 /* DriveProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8390F9CB1B0955C40048D6C3 /* Build configuration list for PBXNativeTarget "DriveProject" */;
+			buildPhases = (
+				8390F9A41B0955C40048D6C3 /* Sources */,
+				8390F9A51B0955C40048D6C3 /* Frameworks */,
+				8390F9A61B0955C40048D6C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DriveProject;
+			productName = DriveProject;
+			productReference = 8390F9A81B0955C40048D6C3 /* DriveProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8390F9C01B0955C40048D6C3 /* DriveProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8390F9CE1B0955C40048D6C3 /* Build configuration list for PBXNativeTarget "DriveProjectTests" */;
+			buildPhases = (
+				8390F9BD1B0955C40048D6C3 /* Sources */,
+				8390F9BE1B0955C40048D6C3 /* Frameworks */,
+				8390F9BF1B0955C40048D6C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8390F9C31B0955C40048D6C3 /* PBXTargetDependency */,
+			);
+			name = DriveProjectTests;
+			productName = DriveProjectTests;
+			productReference = 8390F9C11B0955C40048D6C3 /* DriveProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8390F9A01B0955C40048D6C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Katie Beltramini";
+				TargetAttributes = {
+					8390F9A71B0955C40048D6C3 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					8390F9C01B0955C40048D6C3 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 8390F9A71B0955C40048D6C3;
+					};
+				};
+			};
+			buildConfigurationList = 8390F9A31B0955C40048D6C3 /* Build configuration list for PBXProject "DriveProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8390F99F1B0955C40048D6C3;
+			productRefGroup = 8390F9A91B0955C40048D6C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8390F9A71B0955C40048D6C3 /* DriveProject */,
+				8390F9C01B0955C40048D6C3 /* DriveProjectTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8390F9A61B0955C40048D6C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8390F9D61B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib in Resources */,
+				8390F9B71B0955C40048D6C3 /* Main.storyboard in Resources */,
+				8390F9BC1B0955C40048D6C3 /* LaunchScreen.xib in Resources */,
+				8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8390F9BF1B0955C40048D6C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8390F9A41B0955C40048D6C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8390F9B41B0955C40048D6C3 /* ViewController.m in Sources */,
+				8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */,
+				8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */,
+				8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */,
+				8390F9AE1B0955C40048D6C3 /* main.m in Sources */,
+				8390F9DA1B0959240048D6C3 /* GTLNetworking_Sources.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8390F9BD1B0955C40048D6C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8390F9C81B0955C40048D6C3 /* DriveProjectTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8390F9C31B0955C40048D6C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8390F9A71B0955C40048D6C3 /* DriveProject */;
+			targetProxy = 8390F9C21B0955C40048D6C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8390F9B51B0955C40048D6C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8390F9B61B0955C40048D6C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8390F9BA1B0955C40048D6C3 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8390F9BB1B0955C40048D6C3 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8390F9C91B0955C40048D6C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "/Users/dbeltramini77/googleapi/Source/**";
+			};
+			name = Debug;
+		};
+		8390F9CA1B0955C40048D6C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "/Users/dbeltramini77/googleapi/Source/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8390F9CC1B0955C40048D6C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DriveProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8390F9CD1B0955C40048D6C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DriveProject/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8390F9CF1B0955C40048D6C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DriveProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriveProject.app/DriveProject";
+			};
+			name = Debug;
+		};
+		8390F9D01B0955C40048D6C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DriveProjectTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DriveProject.app/DriveProject";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8390F9A31B0955C40048D6C3 /* Build configuration list for PBXProject "DriveProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8390F9C91B0955C40048D6C3 /* Debug */,
+				8390F9CA1B0955C40048D6C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8390F9CB1B0955C40048D6C3 /* Build configuration list for PBXNativeTarget "DriveProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8390F9CC1B0955C40048D6C3 /* Debug */,
+				8390F9CD1B0955C40048D6C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8390F9CE1B0955C40048D6C3 /* Build configuration list for PBXNativeTarget "DriveProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8390F9CF1B0955C40048D6C3 /* Debug */,
+				8390F9D01B0955C40048D6C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8390F9A01B0955C40048D6C3 /* Project object */;
+}
