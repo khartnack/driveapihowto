@@ -13,6 +13,7 @@
 #import "GTLDrive.h"
 
 @interface CameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+-(void)createAFolder;
 
 @property (nonatomic, retain) GTLServiceDrive *driveService;
 @property (nonatomic, retain) CameraViewController *cameraViewController;
