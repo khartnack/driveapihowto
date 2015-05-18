@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,10 +16,62 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    ViewController *cvc = [[ViewController alloc] init];
+    
+    /*
+    //need to alloc a controller for each view here
+    ItemViewController *wvc = [[ItemViewController alloc] init];
+    cvc.itemViewController = wvc;
+    
+    InfoViewController *bnr = [[InfoViewController alloc] init];
+    cvc.infoViewController = bnr;
+    
+    RecycleViewController *rvc = [[RecycleViewController alloc] init];
+    wvc.recycleViewController = rvc;
+    
+    BusinessViewController *bvc = [[BusinessViewController alloc] init];
+    rvc.businessViewController = bvc;
+    
+    // //  BusinessInfoViewController *bivc = [[BusinessInfoViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    // bvc.businessInfoViewController = bivc;
+    
+    DataViewController *dvc = [[DataViewController alloc] init];
+    bvc.dataViewController = dvc;
+     
+     */
+    
+    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:cvc];
+    
+    //create the look for nav bar across views
+    [[UINavigationBar appearance] setBarTintColor:[UIColor greenColor]];
+    //[[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x66CCFF)];
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           shadow, NSShadowAttributeName,
+                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    
+    
+    self.window.rootViewController = masterNav;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    return YES;
+}
+
+/*
+ - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     return YES;
 }
+ 
+ */
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

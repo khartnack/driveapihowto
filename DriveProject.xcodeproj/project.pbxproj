@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830B8ED01B09B8670013C36A /* CustomerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830B8ECE1B09B8670013C36A /* CustomerViewController.m */; };
+		830B8ED11B09B8670013C36A /* CustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 830B8ECF1B09B8670013C36A /* CustomerViewController.xib */; };
 		8390F9AE1B0955C40048D6C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9AD1B0955C40048D6C3 /* main.m */; };
 		8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9B01B0955C40048D6C3 /* AppDelegate.m */; };
 		8390F9B41B0955C40048D6C3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9B31B0955C40048D6C3 /* ViewController.m */; };
@@ -33,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		830B8ECD1B09B8670013C36A /* CustomerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerViewController.h; sourceTree = "<group>"; };
+		830B8ECE1B09B8670013C36A /* CustomerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerViewController.m; sourceTree = "<group>"; };
+		830B8ECF1B09B8670013C36A /* CustomerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomerViewController.xib; sourceTree = "<group>"; };
 		8390F9A81B0955C40048D6C3 /* DriveProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390F9AC1B0955C40048D6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390F9AD1B0955C40048D6C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,6 +111,9 @@
 				8390F9AF1B0955C40048D6C3 /* AppDelegate.h */,
 				8390F9B01B0955C40048D6C3 /* AppDelegate.m */,
 				8390F9B21B0955C40048D6C3 /* ViewController.h */,
+				830B8ECD1B09B8670013C36A /* CustomerViewController.h */,
+				830B8ECE1B09B8670013C36A /* CustomerViewController.m */,
+				830B8ECF1B09B8670013C36A /* CustomerViewController.xib */,
 				8390F9B31B0955C40048D6C3 /* ViewController.m */,
 				8390F9B51B0955C40048D6C3 /* Main.storyboard */,
 				8390F9B81B0955C40048D6C3 /* Images.xcassets */,
@@ -225,6 +233,7 @@
 				8390F9B71B0955C40048D6C3 /* Main.storyboard in Resources */,
 				8390F9BC1B0955C40048D6C3 /* LaunchScreen.xib in Resources */,
 				8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */,
+				830B8ED11B09B8670013C36A /* CustomerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830B8ED01B09B8670013C36A /* CustomerViewController.m in Sources */,
 				8390F9B41B0955C40048D6C3 /* ViewController.m in Sources */,
 				8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */,
 				8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */,
@@ -452,6 +462,7 @@
 				8390F9CD1B0955C40048D6C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8390F9CE1B0955C40048D6C3 /* Build configuration list for PBXNativeTarget "DriveProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +471,7 @@
 				8390F9D01B0955C40048D6C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
