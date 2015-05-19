@@ -21,7 +21,7 @@ static NSString *const kKeychainItemName = @"Google Drive Quickstart";
 static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71s2.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
 static NSString *folderName = @"nottest";
-
+static NSMutableArray *driveFiles;
 
 
 @implementation CameraViewController {
@@ -137,6 +137,27 @@ static NSString *folderName = @"nottest";
 
 
 
+-(void)loadDriveFiles
+{
+    GTLQueryDrive *query = [GTLQueryDrive queryForFilesList];
+    query.q = [NSString stringWithFormat:@"'%@' IN parents", @"root"];
+    [self.driveService executeQuery:query completionHandler:^(GTLServiceTicket *ticket,
+                                                              GTLDriveFileList *files,
+                                                              NSError *error) {
+        if (error == nil)
+        {
+            driveFiles = [[NSMutableArray alloc] init]; //
+            [driveFiles addObjectsFromArray:files.items];
+            
+            for (GTLDriveFile *file in driveFiles)
+                NSLog(@"File is %@", file.title);
+        }
+        else
+        {
+            NSLog(@"An error occurred in loadDriveFiles: %@", error);
+        }
+    }];
+}
 
 
 // Uploads a photo to Google Drive
@@ -192,7 +213,7 @@ static NSString *folderName = @"nottest";
                                           }
                                           
                                       } else {
-                                          NSLog(@"An error occurred Katie: %@", error);
+                                          NSLog(@"An error occurred in upload photo: %@", error);
                                           
                                       }
                                       //completionBlock(identityDirId);
@@ -223,7 +244,12 @@ static NSString *folderName = @"nottest";
     NSData *data = UIImagePNGRepresentation((UIImage *)image);
     GTLUploadParameters *uploadParameters = [GTLUploadParameters uploadParametersWithData:data MIMEType:file.mimeType];
     GTLQueryDrive *query2 = [GTLQueryDrive queryForFilesInsertWithObject:file
-                                                  uploadParameters:uploadParameters];
+                                                 uploadParameters:uploadParameters];
+    
+    //GTLDriveChildReference *newChild = [GTLDriveChildReference object];
+   // newChild.identifier = fileId;
+    
+   // GTLQueryDrive *query2 = [GTLQueryDrive queryForChildrenInsertWithObject:newChild folderId:parentRef.identifier];
     
     UIAlertView *waitIndicator = [self showWaitIndicator:@"Uploading to Google Drive"];
     
@@ -243,8 +269,8 @@ static NSString *folderName = @"nottest";
                       }
                   }];
     
+    
 }
-
 
 
 // Helper for showing a wait indicator in a popup
