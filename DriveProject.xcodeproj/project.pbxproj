@@ -21,6 +21,7 @@
 		8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9D71B0959180048D6C3 /* GTLCommon_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8390F9DA1B0959240048D6C3 /* GTLNetworking_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9D91B0959240048D6C3 /* GTLNetworking_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9DC1B09596A0048D6C3 /* GTLDrive_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		83E77C1A1B0D40DB00684DC0 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E77C191B0D40DB00684DC0 /* FileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		8390F9D91B0959240048D6C3 /* GTLNetworking_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLNetworking_Sources.m; sourceTree = "<group>"; };
 		8390F9DB1B09595F0048D6C3 /* GTLDrive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLDrive.h; sourceTree = "<group>"; };
 		8390F9DC1B09596A0048D6C3 /* GTLDrive_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLDrive_Sources.m; sourceTree = "<group>"; };
+		83E77C181B0D40DB00684DC0 /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
+		83E77C191B0D40DB00684DC0 /* FileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				8390F9AB1B0955C40048D6C3 /* Supporting Files */,
 				830B8ED51B0A59A00013C36A /* ViewController.h */,
 				830B8ED61B0A59A00013C36A /* ViewController.m */,
+				83E77C181B0D40DB00684DC0 /* FileViewController.h */,
+				83E77C191B0D40DB00684DC0 /* FileViewController.m */,
 				830B8ED71B0A59A00013C36A /* ViewController.xib */,
 			);
 			path = DriveProject;
@@ -253,6 +258,7 @@
 				8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */,
 				8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */,
 				8390F9AE1B0955C40048D6C3 /* main.m in Sources */,
+				83E77C1A1B0D40DB00684DC0 /* FileViewController.m in Sources */,
 				8390F9DA1B0959240048D6C3 /* GTLNetworking_Sources.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,22 +15,15 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *AddImage;
 @property (weak, nonatomic) IBOutlet UIButton *AddText;
+@property (nonatomic, retain) GTLServiceDrive *driveService;
 @end
-
+static NSString *const kKeychainItemName = @"Google Drive Quickstart";
+static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71s2.apps.googleusercontent.com";
+static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
 @implementation ViewController
 @synthesize cameraViewController;
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+@synthesize driveService;
+@synthesize fileViewController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -42,6 +35,22 @@
     }
     return self;
 }
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+   // self.driveService = [[GTLServiceDrive alloc] init];
+    //self.driveService.authorizer = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
+    //                                                                                     clientID:kClientID
+    //                                                                                 clientSecret:kClientSecret];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
 
 - (IBAction)addImage:(id)sender
 {
@@ -56,6 +65,11 @@
 - (IBAction)addText:(id)sender
 {
     
+    NSLog(@"navigation call for view files");
+    //  [self.navigationController pushViewController: NotesViewController animated:YES];
+    
+    [self.navigationController pushViewController:fileViewController animated:YES];
+
 }
 
 /*

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "CameraViewController.h"
+#import "FileViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -26,7 +27,8 @@
    CameraViewController *cvc = [[CameraViewController alloc] init];
    vvc.cameraViewController = cvc;
     
-    
+    FileViewController *fvc = [[FileViewController alloc] init];
+    vvc.fileViewController = fvc;
       /*
     InfoViewController *bnr = [[InfoViewController alloc] init];
     cvc.infoViewController = bnr;
