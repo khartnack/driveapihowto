@@ -38,10 +38,7 @@ static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // self.driveService = [[GTLServiceDrive alloc] init];
-    //self.driveService.authorizer = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
-    //                                                                                     clientID:kClientID
-    //                                                                                 clientSecret:kClientSecret];
+  
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -79,7 +76,7 @@ static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
 }
 
 // Creates the auth controller for authorizing access to Google Drive.
-- (GTMOAuth2ViewControllerTouch *)createAuthController
+/*- (GTMOAuth2ViewControllerTouch *)createAuthController
 {
     GTMOAuth2ViewControllerTouch *authController;
     authController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:kGTLAuthScopeDriveFile
@@ -106,7 +103,7 @@ static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
     {
         self.driveService.authorizer = authResult;
     }
-}
+}*/
 
 /*
 #pragma mark - Navigation
