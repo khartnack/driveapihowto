@@ -169,7 +169,8 @@ static NSMutableArray *driveFiles;
     
     GTLQueryDrive *queryFilesList = [GTLQueryDrive queryForChildrenListWithFolderId:@"root"];
     queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", DRIVE_IDENTITY_FOLDER];
-    
+    NSLog(@"%@", DRIVE_IDENTITY_FOLDER);
+    NSLog(@"%@", queryFilesList.q);
     [driveService executeQuery:queryFilesList
              completionHandler:^(GTLServiceTicket *ticket, GTLDriveFileList *files,
                                  NSError *error) {
@@ -180,6 +181,7 @@ static NSMutableArray *driveFiles;
                          
                          for (id file in files.items) {
                              identityDirId = [file identifier];
+                             NSLog(@"Parent.Ref %@", identityDirId);
                              if (identityDirId) break;
                          }
                          //completionBlock(identityDirId);
@@ -238,7 +240,7 @@ static NSMutableArray *driveFiles;
     file.mimeType = @"image/png";
     
     GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
-    parentRef.identifier = @"0B6PFgoRarf0NOVJJdHRDcnRfWnM"; // identifier property of the folder
+    parentRef.identifier = @"0BzyzvfNfR7JBV1JTT0owa3hxc2s"; // identifier property of the folder
     file.parents = @[ parentRef ];
     
     NSData *data = UIImagePNGRepresentation((UIImage *)image);

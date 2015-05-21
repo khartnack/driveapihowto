@@ -11,10 +11,12 @@
 #import "CameraViewController.h"
 #import "GTMOAuth2ViewControllerTouch.h"
 #import "GTLDrive.h"
+#import "FileViewController.h"
 
-@interface FileViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+//@class isAuthorized;
+//@interface FileViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-
-@property (nonatomic, retain) GTLServiceDrive *driveService;
-@property (nonatomic, retain) FileViewController *filerViewController;
+@interface FileViewController : UITableViewController
+//@property (nonatomic, retain) GTLServiceDrive *driveService;
+@property (nonatomic, retain) FileViewController *fileViewController;
 @end

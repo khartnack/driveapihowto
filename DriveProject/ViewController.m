@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "CameraViewController.h"
-#import "ViewController.h"
+#import "FileViewController.h"
 #import "AppDelegate.h"
 
 @interface ViewController ()
@@ -70,6 +70,42 @@ static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
     
     [self.navigationController pushViewController:fileViewController animated:YES];
 
+}
+
+// Helper to check if user is authorized
+- (BOOL)isAuthorized
+{
+    return [((GTMOAuth2Authentication *)self.driveService.authorizer) canAuthorize];
+}
+
+// Creates the auth controller for authorizing access to Google Drive.
+- (GTMOAuth2ViewControllerTouch *)createAuthController
+{
+    GTMOAuth2ViewControllerTouch *authController;
+    authController = [[GTMOAuth2ViewControllerTouch alloc] initWithScope:kGTLAuthScopeDriveFile
+                                                                clientID:kClientID
+                                                            clientSecret:kClientSecret
+                                                        keychainItemName:kKeychainItemName
+                                                                delegate:self
+                                                        finishedSelector:@selector(viewController:finishedWithAuth:error:)];
+    return authController;
+}
+
+// Handle completion of the authorization process, and updates the Drive service
+// with the new credentials.
+- (void)viewController:(GTMOAuth2ViewControllerTouch *)viewController
+      finishedWithAuth:(GTMOAuth2Authentication *)authResult
+                 error:(NSError *)error
+{
+    if (error != nil)
+    {
+        //[self showAlert:@"Authentication Error" message:error.localizedDescription];
+        self.driveService.authorizer = nil;
+    }
+    else
+    {
+        self.driveService.authorizer = authResult;
+    }
 }
 
 /*
