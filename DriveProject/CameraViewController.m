@@ -13,7 +13,7 @@
 
 
 @interface CameraViewController ()
-
+@property NSString * identityDirId;
 @end
 static NSString* const DRIVE_IDENTITY_FOLDER = @"my app2";
 
@@ -22,7 +22,7 @@ static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71
 static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
 static NSString *folderName = @"nottest";
 static NSMutableArray *driveFiles;
-
+static  NSString *parentref;
 
 @implementation CameraViewController {
     GTLServiceTicket *_editFileListTicket; }
@@ -163,7 +163,7 @@ static NSMutableArray *driveFiles;
 // Uploads a photo to Google Drive
 - (void)uploadPhoto:(UIImage*)image
 {
-    
+    parentref = nil;
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"'Quickstart Uploaded File ('EEEE MMMM d, YYYY h:mm a, zzz')"];
     
@@ -182,6 +182,7 @@ static NSMutableArray *driveFiles;
                          for (id file in files.items) {
                              identityDirId = [file identifier];
                              NSLog(@"Parent.Ref %@", identityDirId);
+                         
                              if (identityDirId) break;
                          }
                          //completionBlock(identityDirId);
@@ -211,6 +212,7 @@ static NSMutableArray *driveFiles;
                                           
                                           if (file) {
                                               identityDirId = [file identifier];
+                                              parentref = identityDirId;
                                               NSLog(@"identityDirID %@", identityDirId);
                                           }
                                           
@@ -240,7 +242,10 @@ static NSMutableArray *driveFiles;
     file.mimeType = @"image/png";
     
     GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
-    parentRef.identifier = @"0BzyzvfNfR7JBV1JTT0owa3hxc2s"; // identifier property of the folder
+    NSLog(@"PARENT REF %@", _identityDirId);
+    parentRef.identifier = _identityDirId;
+
+   // parentRef.identifier = @"0BzyzvfNfR7JBV1JTT0owa3hxc2s"; // identifier property of the folder
     file.parents = @[ parentRef ];
     
     NSData *data = UIImagePNGRepresentation((UIImage *)image);
