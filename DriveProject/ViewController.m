@@ -19,7 +19,7 @@
 @property (nonatomic, retain) GTLServiceDrive *driveService;
 @end
 
-static NSString* const DRIVE_IDENTITY_FOLDER = @"my app5";
+static NSString* const DRIVE_IDENTITY_FOLDER = @"Image Folder for Apps";
 static NSString *const kKeychainItemName = @"Google Drive Quickstart";
 static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71s2.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
@@ -81,7 +81,7 @@ static NSMutableArray *driveFiles;
         //Not yet authorized, request authorization and push the login UI onto the navigation stack.
         [cameraUI pushViewController:[self createAuthController] animated:YES];
     }
-    //[self dismissViewControllerAnimated:YES completion:nil];
+
     
 }
 
@@ -89,7 +89,7 @@ static NSMutableArray *driveFiles;
 {
     
     NSLog(@"navigation call for view files");
-    //  [self.navigationController pushViewController: NotesViewController animated:YES];
+   
     
     [self.navigationController pushViewController:fileViewController animated:YES];
 

@@ -2,7 +2,7 @@
 //  FileViewController.h
 //  DriveProject
 //
-//  Created by Dave Beltramini on 5/20/15.
+//  Created by Dave Beltramini on 5/22/15.
 //  Copyright (c) 2015 Katie Beltramini. All rights reserved.
 //
 
@@ -14,9 +14,9 @@
 #import "FileViewController.h"
 
 //@class isAuthorized;
-//@interface FileViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface FileViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-@interface FileViewController : UITableViewController
+//@interface FileViewController : UITableViewController
 //@property (nonatomic, retain) GTLServiceDrive *driveService;
 @property (nonatomic, retain) FileViewController *fileViewController;
 @end
