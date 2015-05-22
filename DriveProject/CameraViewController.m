@@ -37,13 +37,6 @@ static NSMutableArray *driveFiles;
     self.driveService.authorizer = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
                                                                                        clientID:kClientID
                                                                                    clientSecret:kClientSecret];
-  // }
-
-
-
-
-//- (void)viewDidAppear:(BOOL)animated
-//{
    
     GTLQueryDrive *queryFilesList = [GTLQueryDrive queryForChildrenListWithFolderId:@"root"];
     queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", DRIVE_IDENTITY_FOLDER];
@@ -110,8 +103,6 @@ static NSMutableArray *driveFiles;
                          //completionBlock(nil);
                  }
              }];
-
-    
     
     // Always display the camera UI.
     [self showCamera];
@@ -144,10 +135,9 @@ static NSMutableArray *driveFiles;
     //cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
     //cameraUI.allowsEditing = YES;
     cameraUI.delegate = self;
-    // [self presentModalViewController:cameraUI animated:YES];
+
     [self presentViewController:cameraUI animated:YES completion:NULL];
-    //[self.view.window.rootViewController.navigationController pushViewController:cameraUI animated:YES];
-    
+
     if (![self isAuthorized])
   {
         //Not yet authorized, request authorization and push the login UI onto the navigation stack.
@@ -238,13 +228,8 @@ static NSMutableArray *driveFiles;
 // Uploads a photo to Google Drive
 - (void)uploadPhoto:(UIImage*)image
 {
-
-    
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"'Quickstart Uploaded File ('EEEE MMMM d, YYYY h:mm a, zzz')"];
-    
-
-    
     GTLDriveFile *file = [GTLDriveFile object];
     file.title = [dateFormat stringFromDate:[NSDate date]];
     file.descriptionProperty = @"Uploaded from the Google Drive iOS Quickstart";
