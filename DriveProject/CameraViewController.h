@@ -14,7 +14,7 @@
 
 @interface CameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-
+//@property (nonatomic, retain) NSString *identityDirId;
 @property (nonatomic, retain) GTLServiceDrive *driveService;
 @property (nonatomic, retain) CameraViewController *cameraViewController;
 

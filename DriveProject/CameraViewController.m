@@ -13,9 +13,9 @@
 
 
 @interface CameraViewController ()
-@property NSString * identityDirId;
+@property (nonatomic, strong) NSString *identityDirId;
 @end
-static NSString* const DRIVE_IDENTITY_FOLDER = @"my app4";
+static NSString* const DRIVE_IDENTITY_FOLDER = @"my app5";
 
 static NSString *const kKeychainItemName = @"Google Drive Quickstart";
 static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71s2.apps.googleusercontent.com";
@@ -23,7 +23,7 @@ static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
 static NSString *folderName = @"nottest";
 static NSMutableArray *driveFiles;
 static  NSString *parentref;
-static NSString *folderIdentifier;
+//static NSString *identityDirId;
 
 @implementation CameraViewController {
     GTLServiceTicket *_editFileListTicket; }
@@ -58,7 +58,7 @@ static NSString *folderIdentifier;
                      NSString * identityDirId = nil;
                      
                      for (id file in files.items) {
-                         identityDirId = [file identifier];
+                         _identityDirId = [file identifier];
                          NSLog(@"Parent.Ref %@", identityDirId);
                          
                          //if (identityDirId) break;
@@ -90,7 +90,7 @@ static NSString *folderIdentifier;
                                   if (error == nil) {
                                       
                                       if (file) {
-                                          identityDirId = [file identifier];
+                                          _identityDirId = [file identifier];
                                           //parentref = identityDirId;
                                           NSLog(@"identityDirID %@", identityDirId);
                                       }
@@ -324,9 +324,9 @@ static NSString *folderIdentifier;
     GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
 
     parentRef.identifier = _identityDirId;
-    parentRef.identifier = @"0BzyzvfNfR7JBRm9CMkVGSzE4aDA"; // identifier property of the folder
-    NSLog(@"folder identifier %@", parentref);
-    if(parentref!=nil)
+    //parentRef.identifier = @"0BzyzvfNfR7JBRm9CMkVGSzE4aDA"; // identifier property of the folder
+    NSLog(@"folder identifier %@", _identityDirId);
+    if(parentRef.identifier!=nil)
     {
         
         file.parents = @[ parentRef ];
