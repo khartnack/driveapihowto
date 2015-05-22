@@ -23,6 +23,8 @@
 		8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9DC1B09596A0048D6C3 /* GTLDrive_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		83E77C5B1B0F8AEA00684DC0 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E77C591B0F8AEA00684DC0 /* FileViewController.m */; };
 		83E77C5C1B0F8AEA00684DC0 /* FileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E77C5A1B0F8AEA00684DC0 /* FileViewController.xib */; };
+		83E77C601B0F9CA900684DC0 /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E77C5E1B0F9CA900684DC0 /* FolderViewController.m */; };
+		83E77C611B0F9CA900684DC0 /* FolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E77C5F1B0F9CA900684DC0 /* FolderViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,9 @@
 		83E77C581B0F8AEA00684DC0 /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
 		83E77C591B0F8AEA00684DC0 /* FileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		83E77C5A1B0F8AEA00684DC0 /* FileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileViewController.xib; sourceTree = "<group>"; };
+		83E77C5D1B0F9CA900684DC0 /* FolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderViewController.h; sourceTree = "<group>"; };
+		83E77C5E1B0F9CA900684DC0 /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
+		83E77C5F1B0F9CA900684DC0 /* FolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FolderViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +120,9 @@
 				8390F9D91B0959240048D6C3 /* GTLNetworking_Sources.m */,
 				8390F9D51B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib */,
 				8390F9AF1B0955C40048D6C3 /* AppDelegate.h */,
+				83E77C5D1B0F9CA900684DC0 /* FolderViewController.h */,
+				83E77C5E1B0F9CA900684DC0 /* FolderViewController.m */,
+				83E77C5F1B0F9CA900684DC0 /* FolderViewController.xib */,
 				8390F9B01B0955C40048D6C3 /* AppDelegate.m */,
 				830B8ED21B0A50830013C36A /* CameraViewController.h */,
 				830B8ED31B0A50830013C36A /* CameraViewController.m */,
@@ -234,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E77C611B0F9CA900684DC0 /* FolderViewController.xib in Resources */,
 				83E77C5C1B0F8AEA00684DC0 /* FileViewController.xib in Resources */,
 				830B8ED91B0A59A00013C36A /* ViewController.xib in Resources */,
 				8390F9D61B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib in Resources */,
@@ -256,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E77C601B0F9CA900684DC0 /* FolderViewController.m in Sources */,
 				830B8ED41B0A50830013C36A /* CameraViewController.m in Sources */,
 				830B8ED81B0A59A00013C36A /* ViewController.m in Sources */,
 				8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */,

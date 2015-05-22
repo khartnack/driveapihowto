@@ -12,12 +12,15 @@
 #import "CameraViewController.h"
 #import "FileViewController.h"
 #import "AppDelegate.h"
+#import "FolderViewController.h"
 
 @class CameraViewController;
 @class FileViewController;
+@class FolderViewController;
 @interface ViewController:  UIViewController <UINavigationControllerDelegate>
 @property (nonatomic, strong) CameraViewController  *cameraViewController;
 @property (nonatomic, strong) FileViewController  *fileViewController;
+@property (nonatomic, strong) FolderViewController * folderViewController;
 @end
 
 
