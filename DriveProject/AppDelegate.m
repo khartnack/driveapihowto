@@ -8,9 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "CameraViewController.h"
 #import "FileViewController.h"
-#import "FolderViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -24,9 +22,7 @@
     ViewController *vvc = [[ViewController alloc] init];
     
   
-    //need to alloc a controller for each view here
-   FolderViewController *fovc = [[FolderViewController alloc] init];
-   vvc.folderViewController = fovc;
+    
     
     FileViewController *fvc = [[FileViewController alloc] init];
     vvc.fileViewController = fvc;

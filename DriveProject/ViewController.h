@@ -9,10 +9,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "CameraViewController.h"
 #import "FileViewController.h"
 #import "AppDelegate.h"
-#import "FolderViewController.h"
+
 
 @class CameraViewController;
 @class FileViewController;

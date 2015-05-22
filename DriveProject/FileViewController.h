@@ -10,14 +10,10 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "GTMOAuth2ViewControllerTouch.h"
 #import "GTLDrive.h"
-#import "FolderViewController.h"
-#import "ViewController.h"
-#import "AppDelegate.h"
+#import "FileViewController.h"
 
-//@class isAuthorized;
-@interface FolderViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-//@property (nonatomic, retain) GTLServiceDrive *driveService;
+@interface FileViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
 @property (nonatomic, retain) FileViewController *fileViewController;
-@property (nonatomic, retain) FolderViewController *folderViewController;
 @end

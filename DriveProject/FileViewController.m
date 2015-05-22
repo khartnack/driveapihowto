@@ -1,111 +1,110 @@
 //
-//  ViewController.m
-//  DriveProject
+//  FileViewController.m
+//  DriveProject How To
 //
-//  Created by Dave Beltramini on 5/18/15.
 //  Copyright (c) 2015 Katie Beltramini. All rights reserved.
-//
+//  used: https://github.com/surespot/surespot-ios/blob/master/surespot/backup/RestoreIdentityDriveViewController.mm for code
 
-#import "ViewController.h"
 #import "FileViewController.h"
+#import "ViewController.h"
 #import "AppDelegate.h"
+#import "GTMOAuth2ViewControllerTouch.h"
+#import "GTLDrive.h"
 
 
-
-@interface ViewController() <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-@property (nonatomic, strong) NSString *identityDirId;
-@property (weak, nonatomic) IBOutlet UIButton *AddImage;
-@property (weak, nonatomic) IBOutlet UIButton *AddText;
+@interface FileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *NoteLabel;
+@property (weak, nonatomic) IBOutlet UITextView *NoteText;
 @property (nonatomic, retain) GTLServiceDrive *driveService;
+@property (nonatomic, copy) NSArray *files;
+@property (nonatomic, strong) NSString *identityDirId;
+@property (strong) NSString *originalContent;
+@property (strong) NSString *fileTitle;
 @end
-
-static NSString* const DRIVE_IDENTITY_FOLDER = @"Image Folder for Apps";
+static NSString* const DRIVE_IDENTITY_FOLDER = @"Text Folder for App";
 static NSString *const kKeychainItemName = @"Google Drive Quickstart";
 static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71s2.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
 static NSString *folderName = @"nottest";
 static NSMutableArray *driveFiles;
-@implementation ViewController
-@synthesize cameraViewController;
+
+
+@implementation FileViewController
 @synthesize driveService;
 @synthesize fileViewController;
-@synthesize folderViewController;
-
 
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Initialization code
-        self.navigationItem.title = @"Upload File";
-        
-        NSLog(@"initWithNibName");
-        
+        self.navigationItem.title = @"Text Note";
+
     }
     return self;
 }
 
 
 
+- (IBAction)addText:(id)sender
+{
+
+   // GTLUploadParameters *uploadParameters = nil;
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"'App: Uploaded File ('EEEE MMMM d, YYYY h:mm a, zzz')"];
+    GTLDriveFile *file = [GTLDriveFile object];
+    file.title = [dateFormat stringFromDate:[NSDate date]];
+    file.descriptionProperty = @"Uploaded from the Google Drive iOS Quickstart";
+    file.mimeType = @"text/plain";
+    
+    GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
+    
+    parentRef.identifier = _identityDirId;
+    NSLog(@"folder identifier %@", _identityDirId);
+    if(parentRef.identifier!=nil)
+    {
+        
+        file.parents = @[ parentRef ];
+        NSLog(@"if idnetityDir!=nil %@", @[parentRef]);
+        
+    }
+    
+    NSData *fileContent =
+    [self.NoteText.text dataUsingEncoding:NSUTF8StringEncoding];  [GTLUploadParameters uploadParametersWithData:fileContent MIMEType:@"text/plain"];
+    GTLUploadParameters *uploadParameters = [GTLUploadParameters uploadParametersWithData:fileContent MIMEType:file.mimeType];
+    NSLog(@"file Content%@", fileContent);
+    
+    GTLQueryDrive *query2 = [GTLQueryDrive queryForFilesInsertWithObject:file
+                                                        uploadParameters:uploadParameters];
+    
+    
+    
+    UIAlertView *waitIndicator = [self showWaitIndicator:@"Uploading to Google Drive"];
+    
+    [self.driveService executeQuery:query2
+                  completionHandler:^(GTLServiceTicket *ticket,
+                                      GTLDriveFile *insertedFile, NSError *error) {
+                      [waitIndicator dismissWithClickedButtonIndex:0 animated:YES];
+                      if (error == nil)
+                      {
+                          NSLog(@"File ID: %@", insertedFile.identifier);
+                          [self showAlert:@"Google Drive" message:@"File saved!"];
+                      }
+                      else
+                      {
+                          NSLog(@"An error occurred: %@", error);
+                          [self showAlert:@"Google Drive" message:@"Sorry, an error occurred!"];
+                      }
+                  }];
+    
+
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-- (IBAction)addImage:(id)sender
-{
-    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-        cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else
-    {
-        // In case we're running the iPhone simulator, fall back on the photo library instead.
-        cameraUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-        {
-            [self showAlert:@"Error" message:@"Sorry, iPad Simulator not supported!"];
-            return;
-        }
-    };
-    //cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-    //cameraUI.allowsEditing = YES;
-    cameraUI.delegate = self;
-    
-    [self presentViewController:cameraUI animated:YES completion:NULL];
-    
-    if (![self isAuthorized])
-    {
-        //Not yet authorized, request authorization and push the login UI onto the navigation stack.
-        [cameraUI pushViewController:[self createAuthController] animated:YES];
-    }
-
-    
-}
-
-- (IBAction)addText:(id)sender
-{
-    
-    NSLog(@"navigation call for view files");
-   
-    
-    [self.navigationController pushViewController:fileViewController animated:YES];
-
-}
-
-- (IBAction)viewFolders:(id)sender
-{
-    
-    NSLog(@"navigation call for view files");
-    
-    
-    [self.navigationController pushViewController:folderViewController animated:YES];
-    
-}
-
 
 
 //- (void)viewDidLoad
@@ -145,10 +144,6 @@ static NSMutableArray *driveFiles;
                          GTLDriveFile *folderObj = [GTLDriveFile object];
                          folderObj.title = DRIVE_IDENTITY_FOLDER;
                          folderObj.mimeType = @"application/vnd.google-apps.folder";
-                         
-                         // To create a folder in a specific parent folder, specify the identifier
-                         // of the parent:
-                         // _resourceId is the identifier from the parent folder
                          NSLog(@"folder idnet %@", folderObj.identifier);
                          GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
                          parentRef.identifier = @"root";
@@ -185,65 +180,12 @@ static NSMutableArray *driveFiles;
                  }
              }];
     
-    // Always display the camera UI.
-    //[self showCamera];
-    
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
 }
-
-- (void)showCamera
-{
-    UIImagePickerController *cameraUI = [[UIImagePickerController alloc] init];
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-        cameraUI.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else
-    {
-        // In case we're running the iPhone simulator, fall back on the photo library instead.
-        cameraUI.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-        {
-            [self showAlert:@"Error" message:@"Sorry, iPad Simulator not supported!"];
-            return;
-        }
-    };
-    //cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-    //cameraUI.allowsEditing = YES;
-    cameraUI.delegate = self;
-    
-    [self presentViewController:cameraUI animated:YES completion:NULL];
-    
-    if (![self isAuthorized])
-    {
-        //Not yet authorized, request authorization and push the login UI onto the navigation stack.
-        [cameraUI pushViewController:[self createAuthController] animated:YES];
-    }
-    //[self dismissViewControllerAnimated:YES completion:nil];
-}
-
-// Handle selection of an image
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    [self uploadPhoto:image];
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    
-}
-
-// Handle cancel from image picker/camera.
-- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
-{
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
 
 // Helper to check if user is authorized
 - (BOOL)isAuthorized
@@ -282,79 +224,6 @@ static NSMutableArray *driveFiles;
 }
 
 
-
--(void)loadDriveFiles
-{
-    GTLQueryDrive *query = [GTLQueryDrive queryForFilesList];
-    query.q = [NSString stringWithFormat:@"'%@' IN parents", @"root"];
-    [self.driveService executeQuery:query completionHandler:^(GTLServiceTicket *ticket,
-                                                              GTLDriveFileList *files,
-                                                              NSError *error) {
-        if (error == nil)
-        {
-            driveFiles = [[NSMutableArray alloc] init]; //
-            [driveFiles addObjectsFromArray:files.items];
-            
-            for (GTLDriveFile *file in driveFiles)
-                NSLog(@"File is %@", file.title);
-        }
-        else
-        {
-            NSLog(@"An error occurred in loadDriveFiles: %@", error);
-        }
-    }];
-}
-
-
-// Uploads a photo to Google Drive
-- (void)uploadPhoto:(UIImage*)image
-{
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"'Quickstart Uploaded File ('EEEE MMMM d, YYYY h:mm a, zzz')"];
-    GTLDriveFile *file = [GTLDriveFile object];
-    file.title = [dateFormat stringFromDate:[NSDate date]];
-    file.descriptionProperty = @"Uploaded from the Google Drive iOS Quickstart";
-    file.mimeType = @"image/png";
-    
-    GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
-    
-    parentRef.identifier = _identityDirId;
-    NSLog(@"folder identifier %@", _identityDirId);
-    if(parentRef.identifier!=nil)
-    {
-        
-        file.parents = @[ parentRef ];
-        NSLog(@"if idnetityDir!=nil %@", @[parentRef]);
-        
-    }
-    
-    NSData *data = UIImagePNGRepresentation((UIImage *)image);
-    GTLUploadParameters *uploadParameters = [GTLUploadParameters uploadParametersWithData:data MIMEType:file.mimeType];
-    GTLQueryDrive *query2 = [GTLQueryDrive queryForFilesInsertWithObject:file
-                                                        uploadParameters:uploadParameters];
-    
-    
-    
-    UIAlertView *waitIndicator = [self showWaitIndicator:@"Uploading to Google Drive"];
-    
-    [self.driveService executeQuery:query2
-                  completionHandler:^(GTLServiceTicket *ticket,
-                                      GTLDriveFile *insertedFile, NSError *error) {
-                      [waitIndicator dismissWithClickedButtonIndex:0 animated:YES];
-                      if (error == nil)
-                      {
-                          NSLog(@"File ID: %@", insertedFile.identifier);
-                          [self showAlert:@"Google Drive" message:@"File saved!"];
-                      }
-                      else
-                      {
-                          NSLog(@"An error occurred: %@", error);
-                          [self showAlert:@"Google Drive" message:@"Sorry, an error occurred!"];
-                      }
-                  }];
-    
-    
-}
 
 
 // Helper for showing a wait indicator in a popup
@@ -405,3 +274,4 @@ static NSMutableArray *driveFiles;
 
 
 @end
+
