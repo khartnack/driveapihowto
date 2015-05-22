@@ -2,7 +2,6 @@
 //  ViewController.h
 //  DriveProject
 //
-//  Created by Dave Beltramini on 5/18/15.
 //  Copyright (c) 2015 Katie Beltramini. All rights reserved.
 // test
 

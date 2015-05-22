@@ -147,7 +147,7 @@ static NSMutableArray *driveFiles;
                          [driveService executeQuery:query
                                   completionHandler:^(GTLServiceTicket *ticket, GTLDriveFile *file,
                                                       NSError *error) {
-                                      NSString * identityDirId = nil;
+                                      //NSString * identityDirId = nil;
                                       if (error == nil) {
                                           
                                           if (file) {

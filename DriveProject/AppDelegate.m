@@ -2,7 +2,6 @@
 //  AppDelegate.m
 //  DriveProject
 //
-//  Created by Dave Beltramini on 5/17/15.
 //  Copyright (c) 2015 Katie Beltramini. All rights reserved.
 //
 
@@ -26,23 +25,6 @@
     
     FileViewController *fvc = [[FileViewController alloc] init];
     vvc.fileViewController = fvc;
-      /*
-    InfoViewController *bnr = [[InfoViewController alloc] init];
-    cvc.infoViewController = bnr;
-    
-    RecycleViewController *rvc = [[RecycleViewController alloc] init];
-    wvc.recycleViewController = rvc;
-    
-    BusinessViewController *bvc = [[BusinessViewController alloc] init];
-    rvc.businessViewController = bvc;
-    
-    // //  BusinessInfoViewController *bivc = [[BusinessInfoViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    // bvc.businessInfoViewController = bivc;
-    
-    DataViewController *dvc = [[DataViewController alloc] init];
-    bvc.dataViewController = dvc;
-     
-     */
     
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:vvc];
     
@@ -66,13 +48,6 @@
     return YES;
 }
 
-/*
- - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    return YES;
-}
- 
- */
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

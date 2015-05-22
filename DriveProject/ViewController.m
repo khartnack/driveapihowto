@@ -73,8 +73,7 @@ static NSMutableArray *driveFiles;
             return;
         }
     };
-    //cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-    //cameraUI.allowsEditing = YES;
+
     cameraUI.delegate = self;
     
     [self presentViewController:cameraUI animated:YES completion:NULL];
@@ -90,30 +89,15 @@ static NSMutableArray *driveFiles;
 
 - (IBAction)addText:(id)sender
 {
-    
-    NSLog(@"navigation call for view files");
-   
-    
+
     [self.navigationController pushViewController:fileViewController animated:YES];
 
 }
 
-- (IBAction)viewFolders:(id)sender
-{
-    
-    NSLog(@"navigation call for view files");
-    
-    
-    [self.navigationController pushViewController:folderViewController animated:YES];
-    
-}
 
-
-
-//- (void)viewDidLoad
 -(void)viewWillAppear:(BOOL)animated
 {
-    //  [super viewDidLoad];
+
     [super viewWillAppear:animated];
     // Initialize the drive service & load existing credentials from the keychain if available
     self.driveService = [[GTLServiceDrive alloc] init];
@@ -123,14 +107,11 @@ static NSMutableArray *driveFiles;
     
     GTLQueryDrive *queryFilesList = [GTLQueryDrive queryForChildrenListWithFolderId:@"root"];
     queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", DRIVE_IDENTITY_FOLDER];
-    NSLog(@"Drive Identity folder%@", DRIVE_IDENTITY_FOLDER);
-    NSLog(@"querylist%@", queryFilesList.q);
     [driveService executeQuery:queryFilesList
              completionHandler:^(GTLServiceTicket *ticket, GTLDriveFileList *files,
                                  NSError *error) {
                  if (error == nil) {
                      if (files.items.count > 0) {
-                         NSLog(@"file count >0");
                          NSString * identityDirId = nil;
                          
                          for (id file in files.items) {
@@ -140,18 +121,13 @@ static NSMutableArray *driveFiles;
                              if (identityDirId) break;
                          }
                          
-                         //completionBlock(identityDirId);
                          return;
                      }
                      else {
                          GTLDriveFile *folderObj = [GTLDriveFile object];
                          folderObj.title = DRIVE_IDENTITY_FOLDER;
                          folderObj.mimeType = @"application/vnd.google-apps.folder";
-                         
-                         // To create a folder in a specific parent folder, specify the identifier
-                         // of the parent:
-                         // _resourceId is the identifier from the parent folder
-                         NSLog(@"folder idnet %@", folderObj.identifier);
+    
                          GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
                          parentRef.identifier = @"root";
                          folderObj.parents = [NSArray arrayWithObject:parentRef];
@@ -174,7 +150,7 @@ static NSMutableArray *driveFiles;
                                           NSLog(@"An error occurred in upload photo: %@", error);
                                           
                                       }
-                                      //completionBlock(identityDirId);
+
                                       return;
                                       
                                   }];
@@ -183,13 +159,10 @@ static NSMutableArray *driveFiles;
                      
                  } else {
                      NSLog(@"An error occurred: %@", error);
-                     //completionBlock(nil);
+
                  }
              }];
-    
-    // Always display the camera UI.
-    //[self showCamera];
-    
+
     
 }
 
@@ -215,8 +188,7 @@ static NSMutableArray *driveFiles;
             return;
         }
     };
-    //cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-    //cameraUI.allowsEditing = YES;
+
     cameraUI.delegate = self;
     
     [self presentViewController:cameraUI animated:YES completion:NULL];
@@ -226,7 +198,6 @@ static NSMutableArray *driveFiles;
         //Not yet authorized, request authorization and push the login UI onto the navigation stack.
         [cameraUI pushViewController:[self createAuthController] animated:YES];
     }
-    //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 // Handle selection of an image
@@ -285,34 +256,12 @@ static NSMutableArray *driveFiles;
 
 
 
--(void)loadDriveFiles
-{
-    GTLQueryDrive *query = [GTLQueryDrive queryForFilesList];
-    query.q = [NSString stringWithFormat:@"'%@' IN parents", @"root"];
-    [self.driveService executeQuery:query completionHandler:^(GTLServiceTicket *ticket,
-                                                              GTLDriveFileList *files,
-                                                              NSError *error) {
-        if (error == nil)
-        {
-            driveFiles = [[NSMutableArray alloc] init]; //
-            [driveFiles addObjectsFromArray:files.items];
-            
-            for (GTLDriveFile *file in driveFiles)
-                NSLog(@"File is %@", file.title);
-        }
-        else
-        {
-            NSLog(@"An error occurred in loadDriveFiles: %@", error);
-        }
-    }];
-}
-
 
 // Uploads a photo to Google Drive
 - (void)uploadPhoto:(UIImage*)image
 {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setDateFormat:@"'Quickstart Uploaded File ('EEEE MMMM d, YYYY h:mm a, zzz')"];
+    [dateFormat setDateFormat:@"'Image App Uploaded File ('EEEE MMMM d, YYYY h:mm a, zzz')"];
     GTLDriveFile *file = [GTLDriveFile object];
     file.title = [dateFormat stringFromDate:[NSDate date]];
     file.descriptionProperty = @"Uploaded from the Google Drive iOS Quickstart";
@@ -321,12 +270,11 @@ static NSMutableArray *driveFiles;
     GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
     
     parentRef.identifier = _identityDirId;
-    NSLog(@"folder identifier %@", _identityDirId);
+
     if(parentRef.identifier!=nil)
     {
         
         file.parents = @[ parentRef ];
-        NSLog(@"if idnetityDir!=nil %@", @[parentRef]);
         
     }
     
