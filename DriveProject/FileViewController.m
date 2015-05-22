@@ -60,19 +60,17 @@ static NSMutableArray *driveFiles;
     GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
     
     parentRef.identifier = _identityDirId;
-    NSLog(@"folder identifier %@", _identityDirId);
+
     if(parentRef.identifier!=nil)
     {
         
         file.parents = @[ parentRef ];
-        NSLog(@"if idnetityDir!=nil %@", @[parentRef]);
         
     }
     
     NSData *fileContent =
     [self.NoteText.text dataUsingEncoding:NSUTF8StringEncoding];  [GTLUploadParameters uploadParametersWithData:fileContent MIMEType:@"text/plain"];
     GTLUploadParameters *uploadParameters = [GTLUploadParameters uploadParametersWithData:fileContent MIMEType:file.mimeType];
-    NSLog(@"file Content%@", fileContent);
     
     GTLQueryDrive *query2 = [GTLQueryDrive queryForFilesInsertWithObject:file
                                                         uploadParameters:uploadParameters];
@@ -120,31 +118,25 @@ static NSMutableArray *driveFiles;
     
     GTLQueryDrive *queryFilesList = [GTLQueryDrive queryForChildrenListWithFolderId:@"root"];
     queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", DRIVE_IDENTITY_FOLDER];
-    NSLog(@"Drive Identity folder%@", DRIVE_IDENTITY_FOLDER);
-    NSLog(@"querylist%@", queryFilesList.q);
     [driveService executeQuery:queryFilesList
              completionHandler:^(GTLServiceTicket *ticket, GTLDriveFileList *files,
                                  NSError *error) {
                  if (error == nil) {
                      if (files.items.count > 0) {
-                         NSLog(@"file count >0");
                          NSString * identityDirId = nil;
                          
                          for (id file in files.items) {
                              _identityDirId = [file identifier];
-                             NSLog(@"Parent.Ref %@", identityDirId);
-                             
+
                              if (identityDirId) break;
                          }
-                         
-                         //completionBlock(identityDirId);
+                        
                          return;
                      }
                      else {
                          GTLDriveFile *folderObj = [GTLDriveFile object];
                          folderObj.title = DRIVE_IDENTITY_FOLDER;
                          folderObj.mimeType = @"application/vnd.google-apps.folder";
-                         NSLog(@"folder idnet %@", folderObj.identifier);
                          GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
                          parentRef.identifier = @"root";
                          folderObj.parents = [NSArray arrayWithObject:parentRef];
@@ -160,14 +152,14 @@ static NSMutableArray *driveFiles;
                                           
                                           if (file) {
                                               _identityDirId = [file identifier];
-                                              NSLog(@"identityDirID %@", identityDirId);
+
                                           }
                                           
                                       } else {
                                           NSLog(@"An error occurred in upload photo: %@", error);
                                           
                                       }
-                                      //completionBlock(identityDirId);
+
                                       return;
                                       
                                   }];
@@ -176,7 +168,7 @@ static NSMutableArray *driveFiles;
                      
                  } else {
                      NSLog(@"An error occurred: %@", error);
-                     //completionBlock(nil);
+
                  }
              }];
     
