@@ -17,13 +17,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Note:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ek2-AM-lO4">
-                    <rect key="frame" x="60" y="117" width="78" height="21"/>
+                    <rect key="frame" x="55" y="94" width="78" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOZ-zc-NBg">
-                    <rect key="frame" x="60" y="495" width="134" height="34"/>
+                    <rect key="frame" x="55" y="350" width="134" height="34"/>
                     <color key="backgroundColor" red="0.96752939900000001" green="1" blue="0.68535427090000001" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Upload Note">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,7 +33,7 @@
                     </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-wx-UTT">
-                    <rect key="frame" x="55" y="159" width="282" height="308"/>
+                    <rect key="frame" x="55" y="118" width="283" height="198"/>
                     <color key="backgroundColor" white="0.93582956409999996" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
