@@ -50,32 +50,12 @@ static NSMutableArray *driveFiles;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Initialization code
-        self.navigationItem.title = @"Categories";
+        self.navigationItem.title = @"Text Note";
 
     }
     return self;
 }
-/*
 
-- (void)loadFileContent {
-   UIAlertView *waitIndicator = [self showWaitIndicator:@"Uploading to Google Drive"];
-    
-    GTMHTTPFetcher *fetcher =
-    [self.driveService.fetcherService fetcherWithURLString:self.driveFile.downloadUrl];
-    
-    [fetcher beginFetchWithCompletionHandler:^(NSData *data, NSError *error) {
-     //   [alert dismissWithClickedButtonIndex:0 animated:YES];
-        if (error == nil) {
-            NSString* fileContent = [[NSString alloc] initWithData:data
-                                                          encoding:NSUTF8StringEncoding];
-            self.NoteText.text = fileContent;
-            self.originalContent = [fileContent copy];
-        } else {
-            NSLog(@"An error occurred: %@", error);
-            [self showAlert:@"Google Drive" message:@"Sorry, an error occurred!"];
-        }
-    }];
-}*/
 
 
 - (IBAction)addText:(id)sender
@@ -84,8 +64,6 @@ static NSMutableArray *driveFiles;
    // GTLUploadParameters *uploadParameters = nil;
     
     // Only update the file content if different.
-    
-    
 
 
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
