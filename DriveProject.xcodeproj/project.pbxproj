@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		830B8ED41B0A50830013C36A /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830B8ED31B0A50830013C36A /* CameraViewController.m */; };
 		830B8ED81B0A59A00013C36A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830B8ED61B0A59A00013C36A /* ViewController.m */; };
 		830B8ED91B0A59A00013C36A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 830B8ED71B0A59A00013C36A /* ViewController.xib */; };
 		8390F9AE1B0955C40048D6C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9AD1B0955C40048D6C3 /* main.m */; };
@@ -21,8 +20,6 @@
 		8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9D71B0959180048D6C3 /* GTLCommon_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8390F9DA1B0959240048D6C3 /* GTLNetworking_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9D91B0959240048D6C3 /* GTLNetworking_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9DC1B09596A0048D6C3 /* GTLDrive_Sources.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		83E77C5B1B0F8AEA00684DC0 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E77C591B0F8AEA00684DC0 /* FileViewController.m */; };
-		83E77C5C1B0F8AEA00684DC0 /* FileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E77C5A1B0F8AEA00684DC0 /* FileViewController.xib */; };
 		83E77C601B0F9CA900684DC0 /* FolderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E77C5E1B0F9CA900684DC0 /* FolderViewController.m */; };
 		83E77C611B0F9CA900684DC0 /* FolderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83E77C5F1B0F9CA900684DC0 /* FolderViewController.xib */; };
 /* End PBXBuildFile section */
@@ -38,8 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		830B8ED21B0A50830013C36A /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
-		830B8ED31B0A50830013C36A /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		830B8ED51B0A59A00013C36A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		830B8ED61B0A59A00013C36A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		830B8ED71B0A59A00013C36A /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -60,9 +55,6 @@
 		8390F9D91B0959240048D6C3 /* GTLNetworking_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLNetworking_Sources.m; sourceTree = "<group>"; };
 		8390F9DB1B09595F0048D6C3 /* GTLDrive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLDrive.h; sourceTree = "<group>"; };
 		8390F9DC1B09596A0048D6C3 /* GTLDrive_Sources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTLDrive_Sources.m; sourceTree = "<group>"; };
-		83E77C581B0F8AEA00684DC0 /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
-		83E77C591B0F8AEA00684DC0 /* FileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
-		83E77C5A1B0F8AEA00684DC0 /* FileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileViewController.xib; sourceTree = "<group>"; };
 		83E77C5D1B0F9CA900684DC0 /* FolderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolderViewController.h; sourceTree = "<group>"; };
 		83E77C5E1B0F9CA900684DC0 /* FolderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolderViewController.m; sourceTree = "<group>"; };
 		83E77C5F1B0F9CA900684DC0 /* FolderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FolderViewController.xib; sourceTree = "<group>"; };
@@ -112,9 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				8390F9DB1B09595F0048D6C3 /* GTLDrive.h */,
-				83E77C581B0F8AEA00684DC0 /* FileViewController.h */,
-				83E77C591B0F8AEA00684DC0 /* FileViewController.m */,
-				83E77C5A1B0F8AEA00684DC0 /* FileViewController.xib */,
 				8390F9D71B0959180048D6C3 /* GTLCommon_Sources.m */,
 				8390F9DC1B09596A0048D6C3 /* GTLDrive_Sources.m */,
 				8390F9D91B0959240048D6C3 /* GTLNetworking_Sources.m */,
@@ -124,8 +113,6 @@
 				83E77C5E1B0F9CA900684DC0 /* FolderViewController.m */,
 				83E77C5F1B0F9CA900684DC0 /* FolderViewController.xib */,
 				8390F9B01B0955C40048D6C3 /* AppDelegate.m */,
-				830B8ED21B0A50830013C36A /* CameraViewController.h */,
-				830B8ED31B0A50830013C36A /* CameraViewController.m */,
 				8390F9B81B0955C40048D6C3 /* Images.xcassets */,
 				8390F9BA1B0955C40048D6C3 /* LaunchScreen.xib */,
 				8390F9AB1B0955C40048D6C3 /* Supporting Files */,
@@ -243,7 +230,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				83E77C611B0F9CA900684DC0 /* FolderViewController.xib in Resources */,
-				83E77C5C1B0F8AEA00684DC0 /* FileViewController.xib in Resources */,
 				830B8ED91B0A59A00013C36A /* ViewController.xib in Resources */,
 				8390F9D61B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib in Resources */,
 				8390F9BC1B0955C40048D6C3 /* LaunchScreen.xib in Resources */,
@@ -266,13 +252,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				83E77C601B0F9CA900684DC0 /* FolderViewController.m in Sources */,
-				830B8ED41B0A50830013C36A /* CameraViewController.m in Sources */,
 				830B8ED81B0A59A00013C36A /* ViewController.m in Sources */,
 				8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */,
 				8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */,
 				8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */,
 				8390F9AE1B0955C40048D6C3 /* main.m in Sources */,
-				83E77C5B1B0F8AEA00684DC0 /* FileViewController.m in Sources */,
 				8390F9DA1B0959240048D6C3 /* GTLNetworking_Sources.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
