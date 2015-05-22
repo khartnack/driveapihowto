@@ -10,7 +10,7 @@
 #import "CameraViewController.h"
 #import "AppDelegate.h"
 
-@interface CameraViewController ()
+@interface CameraViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic, strong) NSString *identityDirId;
 @end
 
@@ -20,27 +20,30 @@ static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71
 static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
 static NSString *folderName = @"nottest";
 static NSMutableArray *driveFiles;
-static  NSString *parentref;
-//static NSString *identityDirId;
+
 
 @implementation CameraViewController {
     GTLServiceTicket *_editFileListTicket; }
 
 @synthesize driveService;
 
-- (void)viewDidLoad
+//- (void)viewDidLoad
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-    
+  //  [super viewDidLoad];
+       [super viewWillAppear:animated];
     // Initialize the drive service & load existing credentials from the keychain if available
     self.driveService = [[GTLServiceDrive alloc] init];
     self.driveService.authorizer = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
                                                                                        clientID:kClientID
                                                                                    clientSecret:kClientSecret];
-   }
+  // }
 
-- (void)viewDidAppear:(BOOL)animated
-{
+
+
+
+//- (void)viewDidAppear:(BOOL)animated
+//{
    
     GTLQueryDrive *queryFilesList = [GTLQueryDrive queryForChildrenListWithFolderId:@"root"];
     queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", DRIVE_IDENTITY_FOLDER];
@@ -88,7 +91,6 @@ static  NSString *parentref;
                                       
                                       if (file) {
                                           _identityDirId = [file identifier];
-                                          //parentref = identityDirId;
                                           NSLog(@"identityDirID %@", identityDirId);
                                       }
                                       
@@ -113,7 +115,13 @@ static  NSString *parentref;
     
     // Always display the camera UI.
     [self showCamera];
+
    
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
 }
 
 - (void)showCamera
@@ -133,33 +141,38 @@ static  NSString *parentref;
             return;
         }
     };
-    cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
-    cameraUI.allowsEditing = YES;
+    //cameraUI.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeImage, nil];
+    //cameraUI.allowsEditing = YES;
     cameraUI.delegate = self;
     // [self presentModalViewController:cameraUI animated:YES];
-    [self presentViewController:cameraUI animated:NO completion:nil];
+    [self presentViewController:cameraUI animated:YES completion:NULL];
+    //[self.view.window.rootViewController.navigationController pushViewController:cameraUI animated:YES];
     
-//    if (![self isAuthorized])
-  //  {
-        // Not yet authorized, request authorization and push the login UI onto the navigation stack.
-       // [cameraUI pushViewController:[self createAuthController] animated:YES];
-   // }
+    if (![self isAuthorized])
+  {
+        //Not yet authorized, request authorization and push the login UI onto the navigation stack.
+        [cameraUI pushViewController:[self createAuthController] animated:YES];
+    }
+        //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 // Handle selection of an image
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    [self dismissViewControllerAnimated:YES completion:nil];
-    [self uploadPhoto:image];
+        [self uploadPhoto:image];
+    [self dismissViewControllerAnimated:YES completion:NULL];
+
 }
 
 // Handle cancel from image picker/camera.
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 // Helper to check if user is authorized
 - (BOOL)isAuthorized
