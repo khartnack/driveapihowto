@@ -10,13 +10,11 @@
 #import "CameraViewController.h"
 #import "AppDelegate.h"
 
-
-
 @interface CameraViewController ()
 @property (nonatomic, strong) NSString *identityDirId;
 @end
-static NSString* const DRIVE_IDENTITY_FOLDER = @"my app5";
 
+static NSString* const DRIVE_IDENTITY_FOLDER = @"my app5";
 static NSString *const kKeychainItemName = @"Google Drive Quickstart";
 static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71s2.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
@@ -48,11 +46,10 @@ static  NSString *parentref;
     queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", DRIVE_IDENTITY_FOLDER];
     NSLog(@"Drive Identity folder%@", DRIVE_IDENTITY_FOLDER);
     NSLog(@"querylist%@", queryFilesList.q);
-    //NSString *identityDirId = [[NSString alloc] init];
     [driveService executeQuery:queryFilesList
              completionHandler:^(GTLServiceTicket *ticket, GTLDriveFileList *files,
                                  NSError *error) {
-                 // if (error == nil) {
+                if (error == nil) {
                  if (files.items.count > 0) {
                      NSLog(@"file count >0");
                      NSString * identityDirId = nil;
@@ -61,7 +58,7 @@ static  NSString *parentref;
                          _identityDirId = [file identifier];
                          NSLog(@"Parent.Ref %@", identityDirId);
                          
-                         //if (identityDirId) break;
+                        if (identityDirId) break;
                      }
                      
                      //completionBlock(identityDirId);
@@ -103,15 +100,13 @@ static  NSString *parentref;
                                   return;
                                   
                               }];
-                     
-                     
                  }
                  
                  
-                 //        } else {
-                 //          NSLog(@"An error occurred: %@", error);
-                 //          //completionBlock(nil);
-                 //  }
+                        } else {
+                         NSLog(@"An error occurred: %@", error);
+                         //completionBlock(nil);
+                 }
              }];
 
     
@@ -155,21 +150,13 @@ static  NSString *parentref;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-    //[self dismissModalViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
     [self uploadPhoto:image];
-//[self.navigationController popViewControllerAnimated:YES];
-    //  [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 // Handle cancel from image picker/camera.
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    // [self dismissModalViewControllerAnimated:YES];
-    
-   // [self dismissViewControllerAnimated:YES completion:nil];
-    
-   // [self.navigationController popViewControllerAnimated:YES];
     
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -237,84 +224,13 @@ static  NSString *parentref;
 
 // Uploads a photo to Google Drive
 - (void)uploadPhoto:(UIImage*)image
- //   :(void (^)(NSString *))completionBlock
-
 {
 
     
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"'Quickstart Uploaded File ('EEEE MMMM d, YYYY h:mm a, zzz')"];
     
-   /* GTLQueryDrive *queryFilesList = [GTLQueryDrive queryForChildrenListWithFolderId:@"root"];
-    queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", DRIVE_IDENTITY_FOLDER];
-    NSLog(@"Drive Identity folder%@", DRIVE_IDENTITY_FOLDER);
-    NSLog(@"querylist%@", queryFilesList.q);
-    NSString *identityDirId = [[NSString alloc] init];
-    [driveService executeQuery:queryFilesList
-             completionHandler:^(GTLServiceTicket *ticket, GTLDriveFileList *files,
-                                 NSError *error) {
-                // if (error == nil) {
-                     if (files.items.count > 0) {
-                         NSLog(@"file count >0");
-                         NSString * identityDirId = nil;
-                         
-                         for (id file in files.items) {
-                             identityDirId = [file identifier];
-                             NSLog(@"Parent.Ref %@", identityDirId);
-                         
-                             //if (identityDirId) break;
-                         }
-                         
-                         //completionBlock(identityDirId);
-                         return;
-                     }
-                     else {
-                         GTLDriveFile *folderObj = [GTLDriveFile object];
-                         folderObj.title = DRIVE_IDENTITY_FOLDER;
-                         folderObj.mimeType = @"application/vnd.google-apps.folder";
-                        
-                         // To create a folder in a specific parent folder, specify the identifier
-                         // of the parent:
-                         // _resourceId is the identifier from the parent folder
-                         NSLog(@"folder idnet %@", folderObj.identifier);
-                         GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
-                         parentRef.identifier = @"root";
-                         folderObj.parents = [NSArray arrayWithObject:parentRef];
-                         
-                         
-                         GTLQueryDrive *query = [GTLQueryDrive queryForFilesInsertWithObject:folderObj uploadParameters:nil];
-                         
-                         [driveService executeQuery:query
-                                  completionHandler:^(GTLServiceTicket *ticket, GTLDriveFile *file,
-                                                      NSError *error) {
-                                      NSString * identityDirId = nil;
-                                      if (error == nil) {
-                                          
-                                          if (file) {
-                                              identityDirId = [file identifier];
-                                              //parentref = identityDirId;
-                                              NSLog(@"identityDirID %@", identityDirId);
-                                          }
-                                          
-                                      } else {
-                                          NSLog(@"An error occurred in upload photo: %@", error);
-                                          
-                                      }
-                                      //completionBlock(identityDirId);
-                                      return;
-                                      
-                                  }];
-                         
-                         
-                     }
-                     
-                     
-         //        } else {
-           //          NSLog(@"An error occurred: %@", error);
-           //          //completionBlock(nil);
-               //  }
-             }];
-*/
+
     
     GTLDriveFile *file = [GTLDriveFile object];
     file.title = [dateFormat stringFromDate:[NSDate date]];
@@ -324,14 +240,13 @@ static  NSString *parentref;
     GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
 
     parentRef.identifier = _identityDirId;
-    //parentRef.identifier = @"0BzyzvfNfR7JBRm9CMkVGSzE4aDA"; // identifier property of the folder
     NSLog(@"folder identifier %@", _identityDirId);
     if(parentRef.identifier!=nil)
     {
         
         file.parents = @[ parentRef ];
         NSLog(@"if idnetityDir!=nil %@", @[parentRef]);
-         //NSLog(@"if idnetityDir!=nil %@", identityDirId);
+     
     }
     
     NSData *data = UIImagePNGRepresentation((UIImage *)image);
@@ -397,20 +312,6 @@ static  NSString *parentref;
                              otherButtonTitles: nil];
     [alert show];
    
-    
-    
-  /*  UIAlertController* alert = [UIAlertController alertControllerWithTitle:title
-                                                                   message:message
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:defaultAction];*/
-    //[self presentViewController:alert animated:YES completion:nil];
-    
-    
-   // [self.navigationController popViewControllerAnimated:YES];
 
 }
 
