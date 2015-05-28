@@ -9,6 +9,7 @@
 #import "ProjectViewController.h"
 #import "ViewController.h"
 #import "AddProjectViewController.h"
+#import "OptionsViewController.h"
 
 @interface ProjectViewController () <NSURLSessionDelegate, UINavigationControllerDelegate>
 
@@ -20,6 +21,7 @@
 
 @implementation ProjectViewController
 @synthesize addProjectViewController;
+@synthesize optionsViewController;
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
@@ -158,10 +160,9 @@
     
     NSLog(@"--%@",URL);
     
-    // self.customerInfoViewController.title = course[@"name"];
-    //   self.customerInfoViewController.URL = URL;
+     self.optionsViewController.title = course[@"name"];
     
-    //   [self.navigationController pushViewController:self.projectViewController animated:YES];
+    [self.navigationController pushViewController:self.optionsViewController animated:YES];
 }
 
 

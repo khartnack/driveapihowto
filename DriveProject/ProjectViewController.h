@@ -12,17 +12,18 @@
 @class FileViewController;
 
 @class AddProjectViewController;
-//@class NotesInfoViewController;
+@class OptionsViewController;
 //@class ImageViewController;
 
 @interface ProjectViewController : UITableViewController
 @property (nonatomic, strong) FileViewController *fileViewController;
 @property (nonatomic, strong)ProjectViewController *projectViewController;
 @property (nonatomic, strong) AddProjectViewController *addProjectViewController;
-//@property (nonatomic, strong) CustomerInfoViewController *customerInfoViewController;
+@property (nonatomic, strong) OptionsViewController *optionsViewController;
 //@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
 //@property (nonatomic, strong) ImageViewController *imageViewController;
 @property(nonatomic, strong) NSURL *URL;
 @property(nonatomic, strong) NSString *key;
 @property(nonatomic,strong) NSString *noteurl;
+@property(nonatomic,strong) NSString *name;
 @end
