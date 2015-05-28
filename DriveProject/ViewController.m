@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ProjectViewController.h"
 #import "AddProjectViewController.h"
+#import "EditViewController.h"
 
 @interface ViewController () <NSURLSessionDelegate, UINavigationControllerDelegate>
 

@@ -12,6 +12,7 @@
 #import "AddProjectViewController.h"
 #import "OptionsViewController.h"
 #import "DriveViewController.h"
+#import "EditViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -36,6 +37,9 @@
     
     FileViewController *fvc = [[FileViewController alloc] init];
     opvc.fileViewController = fvc;
+    
+    EditViewController *evc = [[EditViewController alloc] init];
+    opvc.editViewController = evc;
     
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:vvc];
     

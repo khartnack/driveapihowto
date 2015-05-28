@@ -13,9 +13,10 @@
 #import "AppDelegate.h"
 #import "DriveViewController.h"
 #import "ProjectViewController.h"
-
+#import "EditViewController.h"
 
 @interface DriveViewController() <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UIButton *EditProject;
 @property (nonatomic, strong) NSString *identityDirId;
 @property (weak, nonatomic) IBOutlet UIButton *AddImage;
 @property (weak, nonatomic) IBOutlet UIButton *AddText;
@@ -33,6 +34,7 @@ static NSMutableArray *driveFiles;
 //@synthesize cameraViewController;
 @synthesize driveService;
 @synthesize fileViewController;
+@synthesize editViewController;
 //@synthesize folderViewController;
 
 
@@ -41,7 +43,7 @@ static NSMutableArray *driveFiles;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Initialization code
-        self.navigationItem.title = @"Upload File";
+        self.navigationItem.title = @"Project Options";
         // NSString* DRIVE_IDENTITY_FOLDER = _name;
         NSLog(@"initWithNibName");
         
@@ -97,6 +99,14 @@ static NSMutableArray *driveFiles;
     
 }
 
+
+- (IBAction)editProject:(id)sender
+{
+    
+    self.editViewController.name = _name;
+    [self.navigationController pushViewController:editViewController animated:YES];
+    
+}
 
 -(void)viewWillAppear:(BOOL)animated
 {

@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="AddImage" destination="CYk-VS-GDv" id="fJm-r9-ZZr"/>
                 <outlet property="AddText" destination="h3c-w5-2bj" id="hNJ-P0-p4T"/>
+                <outlet property="EditProject" destination="jNs-y4-2ds" id="LtC-cN-hWf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,6 +33,15 @@
                     </state>
                     <connections>
                         <action selector="addText:" destination="-1" eventType="touchUpInside" id="ehY-OP-YJt"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNs-y4-2ds">
+                    <rect key="frame" x="122" y="328" width="80" height="30"/>
+                    <state key="normal" title="Edit Project">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="editProject:" destination="-1" eventType="touchUpInside" id="EI7-C8-lYe"/>
                     </connections>
                 </button>
             </subviews>

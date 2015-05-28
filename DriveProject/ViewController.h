@@ -10,14 +10,14 @@
 @class FileViewController;
 @class ProjectViewController;
 @class AddProjectViewController;
-//@class NotesInfoViewController;
+@class EditViewController;
 //@class ImageViewController;
 
 @interface ViewController : UITableViewController {ProjectViewController *projectViewController;}
 @property (nonatomic, strong) FileViewController *fileViewController;
 @property (nonatomic, strong) ProjectViewController *projectViewController;
 @property (nonatomic, strong) AddProjectViewController *addProjectViewController;
-//@property (nonatomic, strong) CustomerInfoViewController *customerInfoViewController;
+@property (nonatomic, strong) EditViewController *editViewController;
 //@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
 //@property (nonatomic, strong) ImageViewController *imageViewController;
 @property(nonatomic, strong) NSURL *URL;

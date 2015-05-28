@@ -17,6 +17,8 @@
 		83686D3E1B16D71800963C52 /* AddProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83686D3C1B16D71800963C52 /* AddProjectViewController.xib */; };
 		83686D421B179A2300963C52 /* DriveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83686D401B179A2300963C52 /* DriveViewController.m */; };
 		83686D431B179A2300963C52 /* DriveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83686D411B179A2300963C52 /* DriveViewController.xib */; };
+		83686D471B17B10900963C52 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83686D451B17B10900963C52 /* EditViewController.m */; };
+		83686D481B17B10900963C52 /* EditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83686D461B17B10900963C52 /* EditViewController.xib */; };
 		8390F9AE1B0955C40048D6C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9AD1B0955C40048D6C3 /* main.m */; };
 		8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9B01B0955C40048D6C3 /* AppDelegate.m */; };
 		8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9B81B0955C40048D6C3 /* Images.xcassets */; };
@@ -57,6 +59,9 @@
 		83686D3F1B179A2300963C52 /* DriveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriveViewController.h; sourceTree = "<group>"; };
 		83686D401B179A2300963C52 /* DriveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveViewController.m; sourceTree = "<group>"; };
 		83686D411B179A2300963C52 /* DriveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DriveViewController.xib; sourceTree = "<group>"; };
+		83686D441B17B10900963C52 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		83686D451B17B10900963C52 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		83686D461B17B10900963C52 /* EditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditViewController.xib; sourceTree = "<group>"; };
 		8390F9A81B0955C40048D6C3 /* DriveProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390F9AC1B0955C40048D6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390F9AD1B0955C40048D6C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -122,6 +127,9 @@
 				83686D341B16CBF300963C52 /* ViewController.h */,
 				83686D351B16CBF300963C52 /* ViewController.m */,
 				83686D3A1B16D71800963C52 /* AddProjectViewController.h */,
+				83686D441B17B10900963C52 /* EditViewController.h */,
+				83686D451B17B10900963C52 /* EditViewController.m */,
+				83686D461B17B10900963C52 /* EditViewController.xib */,
 				83686D3B1B16D71800963C52 /* AddProjectViewController.m */,
 				83686D3C1B16D71800963C52 /* AddProjectViewController.xib */,
 				83686D371B16CF4600963C52 /* ProjectViewController.h */,
@@ -259,6 +267,7 @@
 				83686C971B0FB11100963C52 /* FileViewController.xib in Resources */,
 				8390F9D61B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib in Resources */,
 				8390F9BC1B0955C40048D6C3 /* LaunchScreen.xib in Resources */,
+				83686D481B17B10900963C52 /* EditViewController.xib in Resources */,
 				83686D3E1B16D71800963C52 /* AddProjectViewController.xib in Resources */,
 				8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */,
 				83686D431B179A2300963C52 /* DriveViewController.xib in Resources */,
@@ -283,6 +292,7 @@
 				830B8ED81B0A59A00013C36A /* OptionsViewController.m in Sources */,
 				8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */,
 				8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */,
+				83686D471B17B10900963C52 /* EditViewController.m in Sources */,
 				8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */,
 				8390F9AE1B0955C40048D6C3 /* main.m in Sources */,
 				83686D3D1B16D71800963C52 /* AddProjectViewController.m in Sources */,

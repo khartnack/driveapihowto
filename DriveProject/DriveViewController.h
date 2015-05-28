@@ -13,14 +13,14 @@
 #import "AppDelegate.h"
 #import "ProjectViewController.h"
 #import "ViewController.h"
+#import "EditViewController.h"
 
-
-//@class CameraViewController;
+@class EditViewController;
 @class FileViewController;
 //@class FolderViewController;
 @class ProjectViewController;
 @interface DriveViewController:  UIViewController <UINavigationControllerDelegate>
-//@property (nonatomic, strong) CameraViewController  *cameraViewController;
+@property (nonatomic, strong) EditViewController  *editViewController;
 @property (nonatomic, strong) FileViewController  *fileViewController;
 //@property (nonatomic, strong) FolderViewController * folderViewController;
 @property (nonatomic,strong) NSString *name;
