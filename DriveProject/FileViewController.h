@@ -11,9 +11,11 @@
 #import "GTMOAuth2ViewControllerTouch.h"
 #import "GTLDrive.h"
 #import "FileViewController.h"
+#import "ProjectViewController.h"
 
 
 @interface FileViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (nonatomic, retain) FileViewController *fileViewController;
+@property (nonatomic, retain) NSString *name;
 @end

@@ -12,6 +12,7 @@
 #import "FileViewController.h"
 #import "AppDelegate.h"
 #import "OptionsViewController.h"
+#import "ProjectViewController.h"
 
 
 @interface OptionsViewController() <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -21,7 +22,8 @@
 @property (nonatomic, retain) GTLServiceDrive *driveService;
 @end
 
-static NSString* const DRIVE_IDENTITY_FOLDER = @"Image Folder for Apps";
+//static NSString* const DRIVE_IDENTITY_FOLDER = _name;
+//@"Image Folder for Apps";
 static NSString *const kKeychainItemName = @"Google Drive Quickstart";
 static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71s2.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
@@ -40,7 +42,7 @@ static NSMutableArray *driveFiles;
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Initialization code
         self.navigationItem.title = @"Upload File";
-        
+       // NSString* DRIVE_IDENTITY_FOLDER = _name;
         NSLog(@"initWithNibName");
         
     }
@@ -106,7 +108,8 @@ static NSMutableArray *driveFiles;
                                                                                      clientSecret:kClientSecret];
     
     GTLQueryDrive *queryFilesList = [GTLQueryDrive queryForChildrenListWithFolderId:@"root"];
-    queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", DRIVE_IDENTITY_FOLDER];
+    queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", _name];
+                         //DRIVE_IDENTITY_FOLDER];
     [driveService executeQuery:queryFilesList
              completionHandler:^(GTLServiceTicket *ticket, GTLDriveFileList *files,
                                  NSError *error) {
@@ -125,7 +128,7 @@ static NSMutableArray *driveFiles;
                      }
                      else {
                          GTLDriveFile *folderObj = [GTLDriveFile object];
-                         folderObj.title = DRIVE_IDENTITY_FOLDER;
+                         folderObj.title = _name; //DRIVE_IDENTITY_FOLDER;
                          folderObj.mimeType = @"application/vnd.google-apps.folder";
     
                          GTLDriveParentReference *parentRef = [GTLDriveParentReference object];

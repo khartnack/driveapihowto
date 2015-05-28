@@ -160,7 +160,7 @@
     
     NSLog(@"--%@",URL);
     
-     self.optionsViewController.title = course[@"name"];
+     self.optionsViewController.name = course[@"name"];
     
     [self.navigationController pushViewController:self.optionsViewController animated:YES];
 }

@@ -10,15 +10,18 @@
 #import <Foundation/Foundation.h>
 #import "FileViewController.h"
 #import "AppDelegate.h"
+#import "ProjectViewController.h"
 
 
-@class CameraViewController;
+//@class CameraViewController;
 @class FileViewController;
-@class FolderViewController;
+//@class FolderViewController;
+@class ProjectViewController;
 @interface OptionsViewController:  UIViewController <UINavigationControllerDelegate>
-@property (nonatomic, strong) CameraViewController  *cameraViewController;
+//@property (nonatomic, strong) CameraViewController  *cameraViewController;
 @property (nonatomic, strong) FileViewController  *fileViewController;
-@property (nonatomic, strong) FolderViewController * folderViewController;
+//@property (nonatomic, strong) FolderViewController * folderViewController;
+@property (nonatomic,strong) NSString *name; 
 @end
 
 
