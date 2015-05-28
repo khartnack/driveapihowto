@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *AddImage;
 @property (weak, nonatomic) IBOutlet UIButton *AddText;
 @property (nonatomic, retain) GTLServiceDrive *driveService;
+//@property (nonatomic,retain) NSString *project_key;
 @end
 
 //static NSString* const DRIVE_IDENTITY_FOLDER = _name;
@@ -105,6 +106,7 @@ static NSMutableArray *driveFiles;
     
     self.editViewController.name = _name;
     self.editViewController.noteurl = _noteurl;
+    self.editViewController.project_key = _project_key;
     [self.navigationController pushViewController:editViewController animated:YES];
     
 }

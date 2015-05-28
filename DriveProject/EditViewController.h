@@ -21,4 +21,5 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) EditViewController *editViewController;
 @property (nonatomic, retain) NSString *noteurl;
+@property (nonatomic,retain) NSString *project_key;
 @end

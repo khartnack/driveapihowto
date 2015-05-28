@@ -27,7 +27,7 @@
 @property (strong) NSString *fileTitle;
 @property (strong, nonatomic) NSString *projectname;
 @property (strong, nonatomic) NSString *customer_key;
-@property (strong, nonatomic) NSString *project_key;
+//@property (strong, nonatomic) NSString *project_key;
 @end
 //static NSString* const DRIVE_IDENTITY_FOLDER = @"Text Folder for App";
 static NSString *const kKeychainItemName = @"Google Drive Quickstart";
@@ -104,7 +104,7 @@ static NSMutableArray *driveFiles;
     
   
     
-    NSString *fixedURL = [NSString stringWithFormat:@"http://cs496sp2015.appspot.com/project/%@",_noteurl];
+    NSString *fixedURL = [NSString stringWithFormat:@"http://cs496sp2015.appspot.com/project/%@",_project_key];
     
     NSLog(@"noteurl on edit %@", fixedURL);
     [request setURL:[NSURL URLWithString:fixedURL]];
@@ -160,18 +160,18 @@ static NSMutableArray *driveFiles;
     self.customer_key = _noteurl;
     
     
-    
-    
-    
-    NSString *post = [NSString stringWithFormat: @"name=%@&customer_key=%@&", self.projectname, self.customer_key];
+    NSString *post = [NSString stringWithFormat: @"name=%@&", self.projectname];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    NSString *fixedURL = [NSString stringWithFormat:@"http://cs496sp2015.appspot.com/project"];
+    
+    
+    NSString *fixedURL = [NSString stringWithFormat:@"http://cs496sp2015.appspot.com/project/%@", _project_key];
+    NSLog(@"fixedURL on edit %@", fixedURL);
     
     [request setURL:[NSURL URLWithString:fixedURL]];
-    [request setHTTPMethod:@"POST"];
+    [request setHTTPMethod:@"PUT"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
