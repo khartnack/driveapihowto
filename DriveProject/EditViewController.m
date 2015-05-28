@@ -127,38 +127,9 @@ static NSMutableArray *driveFiles;
 
 - (IBAction)deleteProject:(id)sender
 {
-    if([self.NameText.text isEqual: @""])
-    {
-        
-        /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error"
-         message:@"Please fill in the name."
-         delegate:self
-         cancelButtonTitle:@"OK"
-         
-         otherButtonTitles:nil];
-         [alert show];*/
-        
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                       message:@"Please Provide A Name."
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action) {}];
-        
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
-        
-        return;
-        
-    }
-    else
-    {
-        self.projectname = self.NameText.text;
-    }
-    NSLog(@"key %@", _noteurl);
+        NSLog(@"delete key %@", _project_key);
     
-    self.customer_key = _noteurl;
-    
+  
     
     NSString *post = [NSString stringWithFormat: @"name=%@&", self.projectname];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -168,10 +139,10 @@ static NSMutableArray *driveFiles;
     
     
     NSString *fixedURL = [NSString stringWithFormat:@"http://cs496sp2015.appspot.com/project/%@", _project_key];
-    NSLog(@"fixedURL on edit %@", fixedURL);
+    NSLog(@"fixedURL on delete %@", fixedURL);
     
     [request setURL:[NSURL URLWithString:fixedURL]];
-    [request setHTTPMethod:@"PUT"];
+    [request setHTTPMethod:@"DELETE"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:postData];
