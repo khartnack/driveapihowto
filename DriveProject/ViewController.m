@@ -8,12 +8,13 @@
 
 #import "ViewController.h"
 #import "ProjectViewController.h"
+#import "AddProjectViewController.h"
 
 @interface ViewController () <NSURLSessionDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, copy) NSArray *courses;
-//@property (nonatomic, strong) NSString *key;
+@property (nonatomic, strong) NSString *key;
 
 @end
 
@@ -91,7 +92,7 @@
 {
     
     //https://bookapi.bignerdranch.com/private/courses.json
-    NSString *requestString = @"http://customer-proj.appspot.com/customer/";
+    NSString *requestString = @"http://cs496sp2015.appspot.com/customer/";
     
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *req = [NSURLRequest requestWithURL:url  cachePolicy:NSURLRequestReloadIgnoringCacheData
@@ -143,7 +144,7 @@
     
     NSLog(@"--%@",noteurl);
     
-    NSString *someText = [NSString stringWithFormat: @"http://customer-proj.appspot.com/customer/%@",noteurl];
+    NSString *someText = [NSString stringWithFormat: @"http://cs496sp2015.appspot.com/customer/%@/project",noteurl];
     NSURL *URL= [NSURL URLWithString:someText];
     //NSURL *URL = [NSURL URLWithString:course[@"someText"]];
     
@@ -153,6 +154,7 @@
     
     self.projectViewController.title = course[@"name"];
     self.projectViewController.URL = URL;
+    //self.projectViewController.customer = course[@"key"];
     
     [self.navigationController pushViewController:self.projectViewController animated:YES];
 }

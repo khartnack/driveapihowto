@@ -9,19 +9,19 @@
 #import <UIKit/UIKit.h>
 @class FileViewController;
 @class ProjectViewController;
-//@class CustomerInfoViewController;
+@class AddProjectViewController;
 //@class NotesInfoViewController;
 //@class ImageViewController;
 
 @interface ViewController : UITableViewController {ProjectViewController *projectViewController;}
 @property (nonatomic, strong) FileViewController *fileViewController;
 @property (nonatomic, strong) ProjectViewController *projectViewController;
-//@property (nonatomic, strong) CustomerViewController *customerViewController;
+@property (nonatomic, strong) AddProjectViewController *addProjectViewController;
 //@property (nonatomic, strong) CustomerInfoViewController *customerInfoViewController;
 //@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
 //@property (nonatomic, strong) ImageViewController *imageViewController;
 @property(nonatomic, strong) NSURL *URL;
-@property(nonatomic, strong) NSString *key;
+//@property(nonatomic, strong) NSString *key;
 @end
 
 

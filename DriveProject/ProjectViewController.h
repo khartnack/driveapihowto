@@ -11,14 +11,14 @@
 #import "AppDelegate.h"
 @class FileViewController;
 
-//@class CustomerInfoViewController;
+@class AddProjectViewController;
 //@class NotesInfoViewController;
 //@class ImageViewController;
 
 @interface ProjectViewController : UITableViewController
 @property (nonatomic, strong) FileViewController *fileViewController;
 @property (nonatomic, strong)ProjectViewController *projectViewController;
-//@property (nonatomic, strong) CustomerViewController *customerViewController;
+@property (nonatomic, strong) AddProjectViewController *addProjectViewController;
 //@property (nonatomic, strong) CustomerInfoViewController *customerInfoViewController;
 //@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
 //@property (nonatomic, strong) ImageViewController *imageViewController;

@@ -8,18 +8,18 @@
 
 #import "ProjectViewController.h"
 #import "ViewController.h"
-
+#import "AddProjectViewController.h"
 
 @interface ProjectViewController () <NSURLSessionDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, copy) NSArray *courses;
-//@property (nonatomic, strong) NSString *key;
+//@property (nonatomic, strong) NSInteger *key;
 
 @end
 
 @implementation ProjectViewController
-//@synthesize projectViewController;
+@synthesize addProjectViewController;
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
@@ -55,30 +55,20 @@
     
     
     
-    //UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:@"Info" style: UIBarButtonItemStylePlain    //target:self action:@selector(home)];
+    UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addProject)];
     
-    // self.navigationItem.leftBarButtonItem = backButton;
+    NSArray *actionButtonItems = @[addItem];
+     self.navigationItem.rightBarButtonItems = actionButtonItems;
     
-    /* if(backButton.BNRQuizViewController == nil) {
-     BNRQuizViewController  *view2 = [[BNRQuizViewController  alloc] initWithNibName:@"View2" bundle:[NSBundle mainBundle]];
-     self.BNRQuizViewController  = view2;
-     // [view2 release];
-     }
-     //test
-     [self.navigationController pushViewController:self.BNRQuizViewController animated:YES];*/
-    
-    //UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCustomer)];
-    
-    //NSArray *actionButtonItems = @[addItem];
-    // self.navigationItem.rightBarButtonItems = actionButtonItems;
+    NSLog(@"viewWillAppear");
     
     
 }
 
--(void)addCustomer{
+-(void)addProject{
     
     NSLog(@"navigation call for add");
-    //  [self.navigationController pushViewController: NotesViewController animated:YES];
+     [self.navigationController pushViewController: addProjectViewController animated:YES];
     
     //  [self.navigationController pushViewController:customerViewController animated:YES];
     [self fetchFeed];
@@ -100,7 +90,7 @@
 
 - (void)fetchFeed
 {
-    
+    NSLog(@"fetchfeed");
     NSURLRequest *req = [NSURLRequest requestWithURL:_URL cachePolicy:NSURLRequestReloadIgnoringCacheData
                                      timeoutInterval:60.0];
     
@@ -119,7 +109,7 @@
          // NSLog(@"err %@",err);
          
          NSLog(@"jsonObject -->%@", jsonObject);
-         self.courses = jsonObject[@"customer"];
+         self.courses = jsonObject[@"projects"];
          
          NSLog(@"courses -->%@", self.courses);
          
@@ -127,6 +117,7 @@
              [self.tableView reloadData];
          });
      }];
+        [dataTask resume];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

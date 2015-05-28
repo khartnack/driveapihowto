@@ -13,6 +13,8 @@
 		83686C971B0FB11100963C52 /* FileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83686C951B0FB11100963C52 /* FileViewController.xib */; };
 		83686D361B16CBF300963C52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83686D351B16CBF300963C52 /* ViewController.m */; };
 		83686D391B16CF4600963C52 /* ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83686D381B16CF4600963C52 /* ProjectViewController.m */; };
+		83686D3D1B16D71800963C52 /* AddProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83686D3B1B16D71800963C52 /* AddProjectViewController.m */; };
+		83686D3E1B16D71800963C52 /* AddProjectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83686D3C1B16D71800963C52 /* AddProjectViewController.xib */; };
 		8390F9AE1B0955C40048D6C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9AD1B0955C40048D6C3 /* main.m */; };
 		8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9B01B0955C40048D6C3 /* AppDelegate.m */; };
 		8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9B81B0955C40048D6C3 /* Images.xcassets */; };
@@ -47,6 +49,9 @@
 		83686D351B16CBF300963C52 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		83686D371B16CF4600963C52 /* ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectViewController.h; sourceTree = "<group>"; };
 		83686D381B16CF4600963C52 /* ProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectViewController.m; sourceTree = "<group>"; };
+		83686D3A1B16D71800963C52 /* AddProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddProjectViewController.h; sourceTree = "<group>"; };
+		83686D3B1B16D71800963C52 /* AddProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddProjectViewController.m; sourceTree = "<group>"; };
+		83686D3C1B16D71800963C52 /* AddProjectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddProjectViewController.xib; sourceTree = "<group>"; };
 		8390F9A81B0955C40048D6C3 /* DriveProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390F9AC1B0955C40048D6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390F9AD1B0955C40048D6C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -111,6 +116,9 @@
 			children = (
 				83686D341B16CBF300963C52 /* ViewController.h */,
 				83686D351B16CBF300963C52 /* ViewController.m */,
+				83686D3A1B16D71800963C52 /* AddProjectViewController.h */,
+				83686D3B1B16D71800963C52 /* AddProjectViewController.m */,
+				83686D3C1B16D71800963C52 /* AddProjectViewController.xib */,
 				83686D371B16CF4600963C52 /* ProjectViewController.h */,
 				83686D381B16CF4600963C52 /* ProjectViewController.m */,
 				8390F9DB1B09595F0048D6C3 /* GTLDrive.h */,
@@ -243,6 +251,7 @@
 				83686C971B0FB11100963C52 /* FileViewController.xib in Resources */,
 				8390F9D61B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib in Resources */,
 				8390F9BC1B0955C40048D6C3 /* LaunchScreen.xib in Resources */,
+				83686D3E1B16D71800963C52 /* AddProjectViewController.xib in Resources */,
 				8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +276,7 @@
 				8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */,
 				8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */,
 				8390F9AE1B0955C40048D6C3 /* main.m in Sources */,
+				83686D3D1B16D71800963C52 /* AddProjectViewController.m in Sources */,
 				83686C961B0FB11100963C52 /* FileViewController.m in Sources */,
 				83686D391B16CF4600963C52 /* ProjectViewController.m in Sources */,
 				8390F9DA1B0959240048D6C3 /* GTLNetworking_Sources.m in Sources */,

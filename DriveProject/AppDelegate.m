@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "FileViewController.h"
 #import "ProjectViewController.h"
+#import "AddProjectViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -24,6 +25,9 @@
   
     ProjectViewController *pvc = [[ProjectViewController alloc] init];
     vvc.projectViewController = pvc;
+    
+    AddProjectViewController *apvc = [[AddProjectViewController alloc] init];
+    pvc.addProjectViewController = apvc;
     
     FileViewController *fvc = [[FileViewController alloc] init];
     vvc.fileViewController = fvc;
