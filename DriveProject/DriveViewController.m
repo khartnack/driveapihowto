@@ -11,11 +11,11 @@
 #import "ViewController.h"
 #import "FileViewController.h"
 #import "AppDelegate.h"
-#import "OptionsViewController.h"
+#import "DriveViewController.h"
 #import "ProjectViewController.h"
 
 
-@interface OptionsViewController() <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface DriveViewController() <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic, strong) NSString *identityDirId;
 @property (weak, nonatomic) IBOutlet UIButton *AddImage;
 @property (weak, nonatomic) IBOutlet UIButton *AddText;
@@ -29,7 +29,7 @@ static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71
 static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
 static NSString *folderName = @"nottest";
 static NSMutableArray *driveFiles;
-@implementation OptionsViewController
+@implementation DriveViewController
 //@synthesize cameraViewController;
 @synthesize driveService;
 @synthesize fileViewController;
@@ -42,7 +42,7 @@ static NSMutableArray *driveFiles;
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Initialization code
         self.navigationItem.title = @"Upload File";
-       // NSString* DRIVE_IDENTITY_FOLDER = _name;
+        // NSString* DRIVE_IDENTITY_FOLDER = _name;
         NSLog(@"initWithNibName");
         
     }
@@ -75,7 +75,7 @@ static NSMutableArray *driveFiles;
             return;
         }
     };
-
+    
     cameraUI.delegate = self;
     
     [self presentViewController:cameraUI animated:YES completion:NULL];
@@ -85,22 +85,22 @@ static NSMutableArray *driveFiles;
         //Not yet authorized, request authorization and push the login UI onto the navigation stack.
         [cameraUI pushViewController:[self createAuthController] animated:YES];
     }
-
+    
     
 }
 
 - (IBAction)addText:(id)sender
 {
-
-        self.fileViewController.name = _name;
+    
+    self.fileViewController.name = _name;
     [self.navigationController pushViewController:fileViewController animated:YES];
-
+    
 }
 
 
 -(void)viewWillAppear:(BOOL)animated
 {
-
+    
     [super viewWillAppear:animated];
     // Initialize the drive service & load existing credentials from the keychain if available
     self.driveService = [[GTLServiceDrive alloc] init];
@@ -110,7 +110,7 @@ static NSMutableArray *driveFiles;
     
     GTLQueryDrive *queryFilesList = [GTLQueryDrive queryForChildrenListWithFolderId:@"root"];
     queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", _name];
-                         //DRIVE_IDENTITY_FOLDER];
+    //DRIVE_IDENTITY_FOLDER];
     [driveService executeQuery:queryFilesList
              completionHandler:^(GTLServiceTicket *ticket, GTLDriveFileList *files,
                                  NSError *error) {
@@ -131,7 +131,7 @@ static NSMutableArray *driveFiles;
                          GTLDriveFile *folderObj = [GTLDriveFile object];
                          folderObj.title = _name; //DRIVE_IDENTITY_FOLDER;
                          folderObj.mimeType = @"application/vnd.google-apps.folder";
-    
+                         
                          GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
                          parentRef.identifier = @"root";
                          folderObj.parents = [NSArray arrayWithObject:parentRef];
@@ -154,7 +154,7 @@ static NSMutableArray *driveFiles;
                                           NSLog(@"An error occurred in upload photo: %@", error);
                                           
                                       }
-
+                                      
                                       return;
                                       
                                   }];
@@ -163,10 +163,10 @@ static NSMutableArray *driveFiles;
                      
                  } else {
                      NSLog(@"An error occurred: %@", error);
-
+                     
                  }
              }];
-
+    
     
 }
 
@@ -192,7 +192,7 @@ static NSMutableArray *driveFiles;
             return;
         }
     };
-
+    
     cameraUI.delegate = self;
     
     [self presentViewController:cameraUI animated:YES completion:NULL];
@@ -274,7 +274,7 @@ static NSMutableArray *driveFiles;
     GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
     
     parentRef.identifier = _identityDirId;
-
+    
     if(parentRef.identifier!=nil)
     {
         

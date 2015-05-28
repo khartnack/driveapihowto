@@ -11,6 +11,7 @@
 #import "ProjectViewController.h"
 #import "AddProjectViewController.h"
 #import "OptionsViewController.h"
+#import "DriveViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -30,11 +31,11 @@
     AddProjectViewController *apvc = [[AddProjectViewController alloc] init];
     pvc.addProjectViewController = apvc;
 
-    OptionsViewController *opvc = [[OptionsViewController alloc] init];
-    pvc.optionsViewController = opvc;
+    DriveViewController *opvc = [[DriveViewController alloc] init];
+    pvc.driveViewController = opvc;
     
     FileViewController *fvc = [[FileViewController alloc] init];
-    vvc.fileViewController = fvc;
+    opvc.fileViewController = fvc;
     
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:vvc];
     

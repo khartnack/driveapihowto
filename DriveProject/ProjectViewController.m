@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "AddProjectViewController.h"
 #import "OptionsViewController.h"
+#import "DriveViewController.h"
 
 @interface ProjectViewController () <NSURLSessionDelegate, UINavigationControllerDelegate>
 
@@ -22,6 +23,7 @@
 @implementation ProjectViewController
 @synthesize addProjectViewController;
 @synthesize optionsViewController;
+@synthesize driveViewController;
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
@@ -160,9 +162,9 @@
     
     NSLog(@"--%@",URL);
     
-     self.optionsViewController.name = course[@"name"];
+     self.driveViewController.name = course[@"name"];
     
-    [self.navigationController pushViewController:self.optionsViewController animated:YES];
+    [self.navigationController pushViewController:self.driveViewController animated:YES];
 }
 
 

@@ -10,7 +10,7 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 @class FileViewController;
-
+@class DriveViewController;
 @class AddProjectViewController;
 @class OptionsViewController;
 //@class ImageViewController;
@@ -20,6 +20,7 @@
 @property (nonatomic, strong)ProjectViewController *projectViewController;
 @property (nonatomic, strong) AddProjectViewController *addProjectViewController;
 @property (nonatomic, strong) OptionsViewController *optionsViewController;
+@property (nonatomic, strong) DriveViewController *driveViewController;
 //@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
 //@property (nonatomic, strong) ImageViewController *imageViewController;
 @property(nonatomic, strong) NSURL *URL;
