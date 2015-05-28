@@ -6,6 +6,7 @@
 //  used: https://github.com/surespot/surespot-ios/blob/master/surespot/backup/RestoreIdentityDriveViewController.mm for code
 
 #import "FileViewController.h"
+#import "DriveViewController.h"
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "GTMOAuth2ViewControllerTouch.h"
@@ -21,7 +22,7 @@
 @property (strong) NSString *originalContent;
 @property (strong) NSString *fileTitle;
 @end
-static NSString* const DRIVE_IDENTITY_FOLDER = @"Text Folder for App";
+//static NSString* const DRIVE_IDENTITY_FOLDER = @"Text Folder for App";
 static NSString *const kKeychainItemName = @"Google Drive Quickstart";
 static NSString *const kClientID = @"897192834849-vo8k2i8qegqseacbhm5kl4c69qga71s2.apps.googleusercontent.com";
 static NSString *const kClientSecret = @"6owEqq6jJ0w0OSwRrG0pB8Sj";
@@ -117,7 +118,8 @@ static NSMutableArray *driveFiles;
                                                                                      clientSecret:kClientSecret];
     
     GTLQueryDrive *queryFilesList = [GTLQueryDrive queryForChildrenListWithFolderId:@"root"];
-    queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'", DRIVE_IDENTITY_FOLDER];
+    queryFilesList.q =  [NSString stringWithFormat:@"title='%@' and trashed = false and mimeType='application/vnd.google-apps.folder'",_name];
+                         //DRIVE_IDENTITY_FOLDER];
     [driveService executeQuery:queryFilesList
              completionHandler:^(GTLServiceTicket *ticket, GTLDriveFileList *files,
                                  NSError *error) {
@@ -135,7 +137,8 @@ static NSMutableArray *driveFiles;
                      }
                      else {
                          GTLDriveFile *folderObj = [GTLDriveFile object];
-                         folderObj.title = DRIVE_IDENTITY_FOLDER;
+                         folderObj.title = _name;
+                         //DRIVE_IDENTITY_FOLDER;
                          folderObj.mimeType = @"application/vnd.google-apps.folder";
                          GTLDriveParentReference *parentRef = [GTLDriveParentReference object];
                          parentRef.identifier = @"root";
