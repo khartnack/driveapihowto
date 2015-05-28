@@ -25,6 +25,7 @@
 //@property (nonatomic, strong) FolderViewController * folderViewController;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic, strong)NSString *noteurl;
+@property (nonatomic, strong)NSString *project_key;
 @end
 
 

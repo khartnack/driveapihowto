@@ -25,6 +25,7 @@
 @synthesize optionsViewController;
 @synthesize driveViewController;
 
+
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -164,6 +165,7 @@
     
      self.driveViewController.name = course[@"name"];
     self.driveViewController.noteurl = _noteurl;
+    self.driveViewController.project_key = course[@"key"];
     
     [self.navigationController pushViewController:self.driveViewController animated:YES];
 }

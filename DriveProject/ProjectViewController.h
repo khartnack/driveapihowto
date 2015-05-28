@@ -26,5 +26,6 @@
 @property(nonatomic, strong) NSURL *URL;
 @property(nonatomic, strong) NSString *key;
 @property(nonatomic,strong) NSString *noteurl;
+@property(nonatomic,strong) NSString *project_key;
 @property(nonatomic,strong) NSString *name;
 @end
