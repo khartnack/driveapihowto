@@ -1,5 +1,5 @@
 //
-//  CustomerViewController.h
+//  ProjectViewController.h
 //  DriveProject
 //
 //  Created by Dave Beltramini on 5/27/15.
@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
+#import "AppDelegate.h"
 @class FileViewController;
-@class ProjectViewController;
+
 //@class CustomerInfoViewController;
 //@class NotesInfoViewController;
 //@class ImageViewController;
 
-@interface ViewController : UITableViewController {ProjectViewController *projectViewController;}
+@interface ProjectViewController : UITableViewController
 @property (nonatomic, strong) FileViewController *fileViewController;
-@property (nonatomic, strong) ProjectViewController *projectViewController;
+@property (nonatomic, strong)ProjectViewController *projectViewController;
 //@property (nonatomic, strong) CustomerViewController *customerViewController;
 //@property (nonatomic, strong) CustomerInfoViewController *customerInfoViewController;
 //@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
@@ -23,5 +25,3 @@
 @property(nonatomic, strong) NSURL *URL;
 @property(nonatomic, strong) NSString *key;
 @end
-
-

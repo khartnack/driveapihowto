@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		830B8ED81B0A59A00013C36A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830B8ED61B0A59A00013C36A /* ViewController.m */; };
-		830B8ED91B0A59A00013C36A /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 830B8ED71B0A59A00013C36A /* ViewController.xib */; };
+		830B8ED81B0A59A00013C36A /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830B8ED61B0A59A00013C36A /* OptionsViewController.m */; };
+		830B8ED91B0A59A00013C36A /* OptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 830B8ED71B0A59A00013C36A /* OptionsViewController.xib */; };
 		83686C961B0FB11100963C52 /* FileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83686C941B0FB11100963C52 /* FileViewController.m */; };
 		83686C971B0FB11100963C52 /* FileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83686C951B0FB11100963C52 /* FileViewController.xib */; };
+		83686D361B16CBF300963C52 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83686D351B16CBF300963C52 /* ViewController.m */; };
+		83686D391B16CF4600963C52 /* ProjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83686D381B16CF4600963C52 /* ProjectViewController.m */; };
 		8390F9AE1B0955C40048D6C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9AD1B0955C40048D6C3 /* main.m */; };
 		8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9B01B0955C40048D6C3 /* AppDelegate.m */; };
 		8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9B81B0955C40048D6C3 /* Images.xcassets */; };
@@ -35,12 +37,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		830B8ED51B0A59A00013C36A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		830B8ED61B0A59A00013C36A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		830B8ED71B0A59A00013C36A /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		830B8ED51B0A59A00013C36A /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		830B8ED61B0A59A00013C36A /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		830B8ED71B0A59A00013C36A /* OptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsViewController.xib; sourceTree = "<group>"; };
 		83686C931B0FB11100963C52 /* FileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileViewController.h; sourceTree = "<group>"; };
 		83686C941B0FB11100963C52 /* FileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileViewController.m; sourceTree = "<group>"; };
 		83686C951B0FB11100963C52 /* FileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileViewController.xib; sourceTree = "<group>"; };
+		83686D341B16CBF300963C52 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		83686D351B16CBF300963C52 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		83686D371B16CF4600963C52 /* ProjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectViewController.h; sourceTree = "<group>"; };
+		83686D381B16CF4600963C52 /* ProjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectViewController.m; sourceTree = "<group>"; };
 		8390F9A81B0955C40048D6C3 /* DriveProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390F9AC1B0955C40048D6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390F9AD1B0955C40048D6C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,6 +109,10 @@
 		8390F9AA1B0955C40048D6C3 /* DriveProject */ = {
 			isa = PBXGroup;
 			children = (
+				83686D341B16CBF300963C52 /* ViewController.h */,
+				83686D351B16CBF300963C52 /* ViewController.m */,
+				83686D371B16CF4600963C52 /* ProjectViewController.h */,
+				83686D381B16CF4600963C52 /* ProjectViewController.m */,
 				8390F9DB1B09595F0048D6C3 /* GTLDrive.h */,
 				8390F9D71B0959180048D6C3 /* GTLCommon_Sources.m */,
 				8390F9DC1B09596A0048D6C3 /* GTLDrive_Sources.m */,
@@ -116,9 +126,9 @@
 				8390F9B81B0955C40048D6C3 /* Images.xcassets */,
 				8390F9BA1B0955C40048D6C3 /* LaunchScreen.xib */,
 				8390F9AB1B0955C40048D6C3 /* Supporting Files */,
-				830B8ED51B0A59A00013C36A /* ViewController.h */,
-				830B8ED61B0A59A00013C36A /* ViewController.m */,
-				830B8ED71B0A59A00013C36A /* ViewController.xib */,
+				830B8ED51B0A59A00013C36A /* OptionsViewController.h */,
+				830B8ED61B0A59A00013C36A /* OptionsViewController.m */,
+				830B8ED71B0A59A00013C36A /* OptionsViewController.xib */,
 			);
 			path = DriveProject;
 			sourceTree = "<group>";
@@ -229,7 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				830B8ED91B0A59A00013C36A /* ViewController.xib in Resources */,
+				830B8ED91B0A59A00013C36A /* OptionsViewController.xib in Resources */,
 				83686C971B0FB11100963C52 /* FileViewController.xib in Resources */,
 				8390F9D61B0958EA0048D6C3 /* GTMOAuth2ViewTouch.xib in Resources */,
 				8390F9BC1B0955C40048D6C3 /* LaunchScreen.xib in Resources */,
@@ -251,12 +261,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				830B8ED81B0A59A00013C36A /* ViewController.m in Sources */,
+				83686D361B16CBF300963C52 /* ViewController.m in Sources */,
+				830B8ED81B0A59A00013C36A /* OptionsViewController.m in Sources */,
 				8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */,
 				8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */,
 				8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */,
 				8390F9AE1B0955C40048D6C3 /* main.m in Sources */,
 				83686C961B0FB11100963C52 /* FileViewController.m in Sources */,
+				83686D391B16CF4600963C52 /* ProjectViewController.m in Sources */,
 				8390F9DA1B0959240048D6C3 /* GTLNetworking_Sources.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +399,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DriveProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -397,6 +413,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DriveProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

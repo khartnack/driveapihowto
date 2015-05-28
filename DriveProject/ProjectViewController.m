@@ -1,15 +1,16 @@
 //
-//  CustomerViewController.m
+//  ProjectViewController.m
 //  DriveProject
 //
 //  Created by Dave Beltramini on 5/27/15.
 //  Copyright (c) 2015 Katie Beltramini. All rights reserved.
 //
 
-#import "ViewController.h"
 #import "ProjectViewController.h"
+#import "ViewController.h"
 
-@interface ViewController () <NSURLSessionDelegate, UINavigationControllerDelegate>
+
+@interface ProjectViewController () <NSURLSessionDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, copy) NSArray *courses;
@@ -17,8 +18,8 @@
 
 @end
 
-@implementation ViewController
-@synthesize projectViewController;
+@implementation ProjectViewController
+//@synthesize projectViewController;
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
@@ -35,7 +36,7 @@
         // Set the tab bar item's title
         //     self.tabBarItem.title = @"Notes";
         
-        [self fetchFeed];
+      //  [self fetchFeed];
     }
     return self;
 }
@@ -69,7 +70,7 @@
     //UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCustomer)];
     
     //NSArray *actionButtonItems = @[addItem];
-   // self.navigationItem.rightBarButtonItems = actionButtonItems;
+    // self.navigationItem.rightBarButtonItems = actionButtonItems;
     
     
 }
@@ -79,9 +80,19 @@
     NSLog(@"navigation call for add");
     //  [self.navigationController pushViewController: NotesViewController animated:YES];
     
- //  [self.navigationController pushViewController:projectViewController animated:YES];
+    //  [self.navigationController pushViewController:customerViewController animated:YES];
     [self fetchFeed];
     [self.tableView reloadData];
+}
+
+- (void)setURL:(NSURL *)URL
+{
+    _URL = URL;
+    
+    NSLog(@"--NSLOG%@",URL);
+    if (_URL) {
+        [self fetchFeed];
+    }
 }
 
 
@@ -90,11 +101,7 @@
 - (void)fetchFeed
 {
     
-    //https://bookapi.bignerdranch.com/private/courses.json
-    NSString *requestString = @"http://customer-proj.appspot.com/customer/";
-    
-    NSURL *url = [NSURL URLWithString:requestString];
-    NSURLRequest *req = [NSURLRequest requestWithURL:url  cachePolicy:NSURLRequestReloadIgnoringCacheData
+    NSURLRequest *req = [NSURLRequest requestWithURL:_URL cachePolicy:NSURLRequestReloadIgnoringCacheData
                                      timeoutInterval:60.0];
     
     NSURLSessionDataTask *dataTask =
@@ -102,18 +109,24 @@
                     completionHandler:
      ^(NSData *data, NSURLResponse *response, NSError *error) {
          
+         
+         NSLog(@"data -->%@", data);
+         NSError *err = nil;
          NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                     options:0
-                                                                      error:nil];
-         self.courses = jsonObject[@"customers"];
+                                                                      error:&err];
          
-         NSLog(@"%@", self.courses);
+         // NSLog(@"err %@",err);
+         
+         NSLog(@"jsonObject -->%@", jsonObject);
+         self.courses = jsonObject[@"customer"];
+         
+         NSLog(@"courses -->%@", self.courses);
          
          dispatch_async(dispatch_get_main_queue(), ^{
              [self.tableView reloadData];
          });
      }];
-    [dataTask resume];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -151,10 +164,10 @@
     
     NSLog(@"--%@",URL);
     
-    self.projectViewController.title = course[@"name"];
-    self.projectViewController.URL = URL;
+    // self.customerInfoViewController.title = course[@"name"];
+    //   self.customerInfoViewController.URL = URL;
     
-    [self.navigationController pushViewController:self.projectViewController animated:YES];
+    //   [self.navigationController pushViewController:self.projectViewController animated:YES];
 }
 
 
