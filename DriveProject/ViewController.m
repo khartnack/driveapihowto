@@ -154,6 +154,7 @@
     
     self.projectViewController.title = course[@"name"];
     self.projectViewController.URL = URL;
+    self.projectViewController.noteurl = noteurl;
     //self.projectViewController.customer = course[@"key"];
     
     [self.navigationController pushViewController:self.projectViewController animated:YES];

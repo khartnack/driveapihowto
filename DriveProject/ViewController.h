@@ -21,6 +21,7 @@
 //@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
 //@property (nonatomic, strong) ImageViewController *imageViewController;
 @property(nonatomic, strong) NSURL *URL;
+@property(nonatomic,strong) NSString *noteurl;
 //@property(nonatomic, strong) NSString *key;
 @end
 

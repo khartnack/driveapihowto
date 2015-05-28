@@ -7,6 +7,8 @@
 //
 
 #import "AddProjectViewController.h"
+#import "ProjectViewController.h"
+
 
 @interface AddProjectViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *ProjectName;
@@ -17,13 +19,19 @@
 
 @implementation AddProjectViewController
 
-
+- (void)setKey:(NSString *)key
+{
+    _key = key;
+    
+    NSLog(@"--key%@",key);
+    
+}
 
 - (IBAction)addProject:(id)sender
 {
     if([self.projectField.text isEqual: @""])
     {
-        
+       
         /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error"
          message:@"Please fill in the name."
          delegate:self
@@ -49,19 +57,20 @@
     {
         self.project = self.projectField.text;
     }
+    NSLog(@"key %@", _noteurl);
 
-    self.customer_key = _customer_key;
+    self.customer_key = _noteurl;
     
     
     
     
     
-    NSString *post = [NSString stringWithFormat: @"project=%@&customer_key=%@&", self.project, self.customer_key];
+    NSString *post = [NSString stringWithFormat: @"name=%@&customer_key=%@&", self.project, self.customer_key];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    NSString *fixedURL = [NSString stringWithFormat:@"http://customer-proj.appspot.com/project/"];
+    NSString *fixedURL = [NSString stringWithFormat:@"http://cs496sp2015.appspot.com/project"];
     
     [request setURL:[NSURL URLWithString:fixedURL]];
     [request setHTTPMethod:@"POST"];

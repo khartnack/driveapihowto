@@ -68,6 +68,7 @@
 -(void)addProject{
     
     NSLog(@"navigation call for add");
+    self.addProjectViewController.noteurl = _noteurl;
      [self.navigationController pushViewController: addProjectViewController animated:YES];
     
     //  [self.navigationController pushViewController:customerViewController animated:YES];
@@ -149,6 +150,8 @@
     
     NSString *someText = [NSString stringWithFormat: @"http://customer-proj.appspot.com/customer/%@",noteurl];
     NSURL *URL= [NSURL URLWithString:someText];
+  
+    
     //NSURL *URL = [NSURL URLWithString:course[@"someText"]];
     
     

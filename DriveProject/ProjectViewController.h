@@ -24,4 +24,5 @@
 //@property (nonatomic, strong) ImageViewController *imageViewController;
 @property(nonatomic, strong) NSURL *URL;
 @property(nonatomic, strong) NSString *key;
+@property(nonatomic,strong) NSString *noteurl;
 @end
