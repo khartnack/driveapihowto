@@ -26,6 +26,7 @@
 @property (strong) NSString *originalContent;
 @property (strong) NSString *fileTitle;
 @property (strong, nonatomic) NSString *projectname;
+@property (strong, nonatomic) NSString *customer_key;
 @end
 //static NSString* const DRIVE_IDENTITY_FOLDER = @"Text Folder for App";
 static NSString *const kKeychainItemName = @"Google Drive Quickstart";
@@ -37,11 +38,14 @@ static NSMutableArray *driveFiles;
 
 @implementation EditViewController
 @synthesize driveService;
+@synthesize projectname;
+
 //@synthesize fileViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CurrentNameLabel = _name;
+    self.projectname = _name;
+    self.CurrentNameLabel.text = self.projectname;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -55,7 +59,7 @@ static NSMutableArray *driveFiles;
 
 - (IBAction)editProject:(id)sender
 {
-    if([self.projectField.text isEqual: @""])
+    if([self.NameText.text isEqual: @""])
     {
         
         /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error"
@@ -81,7 +85,7 @@ static NSMutableArray *driveFiles;
     }
     else
     {
-        self.project = self.projectField.text;
+        self.projectname = self.NameText.text;
     }
     NSLog(@"key %@", _noteurl);
     
@@ -91,7 +95,7 @@ static NSMutableArray *driveFiles;
     
     
     
-    NSString *post = [NSString stringWithFormat: @"name=%@&customer_key=%@&", self.project, self.customer_key];
+    NSString *post = [NSString stringWithFormat: @"name=%@&customer_key=%@&", self.projectname, self.customer_key];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
@@ -118,7 +122,7 @@ static NSMutableArray *driveFiles;
 
 - (IBAction)deleteProject:(id)sender
 {
-    if([self.projectField.text isEqual: @""])
+    if([self.NameText.text isEqual: @""])
     {
         
         /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error"
@@ -144,7 +148,7 @@ static NSMutableArray *driveFiles;
     }
     else
     {
-        self.project = self.projectField.text;
+        self.projectname = self.NameText.text;
     }
     NSLog(@"key %@", _noteurl);
     
@@ -154,7 +158,7 @@ static NSMutableArray *driveFiles;
     
     
     
-    NSString *post = [NSString stringWithFormat: @"name=%@&customer_key=%@&", self.project, self.customer_key];
+    NSString *post = [NSString stringWithFormat: @"name=%@&customer_key=%@&", self.projectname, self.customer_key];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

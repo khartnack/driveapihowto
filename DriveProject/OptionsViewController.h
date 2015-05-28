@@ -22,7 +22,8 @@
 //@property (nonatomic, strong) CameraViewController  *cameraViewController;
 @property (nonatomic, strong) FileViewController  *fileViewController;
 //@property (nonatomic, strong) FolderViewController * folderViewController;
-@property (nonatomic,strong) NSString *name; 
+@property (nonatomic,strong) NSString *name;
+@property (nonatomic, strong) NSString *noteurl;
 @end
 
 

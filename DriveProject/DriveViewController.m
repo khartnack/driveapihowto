@@ -104,6 +104,7 @@ static NSMutableArray *driveFiles;
 {
     
     self.editViewController.name = _name;
+    self.editViewController.noteurl = _noteurl;
     [self.navigationController pushViewController:editViewController animated:YES];
     
 }

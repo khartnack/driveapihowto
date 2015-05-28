@@ -77,7 +77,7 @@
     
     //  [self.navigationController pushViewController:customerViewController animated:YES];
     [self fetchFeed];
-    [self.tableView reloadData];
+
 }
 
 - (void)setURL:(NSURL *)URL
@@ -163,6 +163,7 @@
     NSLog(@"--%@",URL);
     
      self.driveViewController.name = course[@"name"];
+    self.driveViewController.noteurl = _noteurl;
     
     [self.navigationController pushViewController:self.driveViewController animated:YES];
 }

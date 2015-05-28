@@ -20,4 +20,5 @@
 @property (nonatomic, retain) FileViewController *fileViewController;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) EditViewController *editViewController;
+@property (nonatomic, retain) NSString *noteurl;
 @end
