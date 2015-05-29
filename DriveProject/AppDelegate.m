@@ -13,6 +13,7 @@
 #import "OptionsViewController.h"
 #import "DriveViewController.h"
 #import "EditViewController.h"
+#import "LoginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -23,8 +24,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    LoginViewController *lvc = [[LoginViewController alloc] init];
+    
+    
     ViewController *vvc = [[ViewController alloc] init];
-   
+    lvc.viewController = vvc;
+    
    // AddProjectViewController *pvc = [[ProjectViewController alloc] init];
    // vvc.projectViewController = pvc;
   
@@ -46,7 +51,7 @@
     EditViewController *evc = [[EditViewController alloc] init];
     opvc.editViewController = evc;
     
-    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:vvc];
+    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:lvc];
     
     //create the look for nav bar across views
     [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
