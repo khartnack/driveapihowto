@@ -155,7 +155,7 @@
     
     NSString *someText = [NSString stringWithFormat: @"http://customer-proj.appspot.com/customer/%@",noteurl];
     NSURL *URL= [NSURL URLWithString:someText];
-  
+   //NSString *someTitle = [NSString stringWithFormat: @"%@ Options",course[@"name"]];
     
     //NSURL *URL = [NSURL URLWithString:course[@"someText"]];
     
@@ -163,6 +163,7 @@
     
     NSLog(@"--%@",URL);
     
+    self.driveViewController.title = course[@"name"];
      self.driveViewController.name = course[@"name"];
     self.driveViewController.noteurl = _noteurl;
     self.driveViewController.project_key = course[@"key"];
