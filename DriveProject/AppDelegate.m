@@ -49,8 +49,8 @@
     UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:vvc];
     
     //create the look for nav bar across views
-    [[UINavigationBar appearance] setBarTintColor:[UIColor greenColor]];
-    //[[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x66CCFF)];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
+ //   [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xFFCCFF)];
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 1);

@@ -131,6 +131,7 @@
     
     NSDictionary *course = self.courses[indexPath.row];
     cell.textLabel.text = course[@"name"];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
