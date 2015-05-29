@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddProjectViewController.h"
 @class FileViewController;
 @class ProjectViewController;
 @class AddProjectViewController;

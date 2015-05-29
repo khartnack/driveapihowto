@@ -8,9 +8,10 @@
 
 #import "AddProjectViewController.h"
 #import "ProjectViewController.h"
+#import "ViewController.h"
 
 
-@interface AddProjectViewController ()
+@interface AddProjectViewController ()  <UINavigationControllerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel *ProjectName;
 @property (weak, nonatomic) IBOutlet UITextField *projectField;
 @property NSString *project;
@@ -18,6 +19,8 @@
 @end
 
 @implementation AddProjectViewController
+@synthesize viewController;
+@synthesize addProjectViewController;
 
 - (void)setKey:(NSString *)key
 {
@@ -85,8 +88,10 @@
         NSLog(@"Connection Failed");
     }
     
+  //  [self.navigationController pushViewController:self.viewController animated:YES];
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.navigationController popToRootViewControllerAnimated:YES];
+  //  [self.navigationController popViewControllerAnimated:YES];
 }
 
 

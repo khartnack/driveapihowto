@@ -46,7 +46,7 @@ static NSMutableArray *driveFiles;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.projectname = _name;
-    self.CurrentNameLabel.text = self.projectname;
+    self.CurrentNameLabel.text = _name;
     // Do any additional setup after loading the view from its nib.
 }
 

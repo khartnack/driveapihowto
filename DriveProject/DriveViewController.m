@@ -44,7 +44,7 @@ static NSMutableArray *driveFiles;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         // Initialization code
-        self.navigationItem.title = @"Project Options";
+        //self.navigationItem.title = @"Project Options";
         // NSString* DRIVE_IDENTITY_FOLDER = _name;
         NSLog(@"initWithNibName");
         

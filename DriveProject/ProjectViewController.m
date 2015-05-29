@@ -53,7 +53,9 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+   // [self fetchFeed];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableReload) name:@"tableReload" object:nil];
     
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
@@ -67,8 +69,16 @@
     
     NSLog(@"viewWillAppear");
     
+  //   [self.tableView reloadData];
+    
     
 }
+
+-(void)tableReload{
+  //  [self fetchFeed];
+    [self.tableView reloadData];
+}
+
 
 -(void)addProject{
     
@@ -77,7 +87,8 @@
      [self.navigationController pushViewController: addProjectViewController animated:YES];
     
     //  [self.navigationController pushViewController:customerViewController animated:YES];
-    [self fetchFeed];
+   // [self fetchFeed];
+    // [self.tableView reloadData];
 
 }
 
@@ -145,7 +156,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    [self fetchFeed];
     //NSLog(@"called");
     NSDictionary *course = self.courses[indexPath.row];
     
@@ -153,7 +164,7 @@
     
     NSLog(@"--%@",noteurl);
     
-    NSString *someText = [NSString stringWithFormat: @"http://customer-proj.appspot.com/customer/%@",noteurl];
+    NSString *someText = [NSString stringWithFormat: @"http://cs496sp2015.appspot.com/customer/%@",noteurl];
     NSURL *URL= [NSURL URLWithString:someText];
    //NSString *someTitle = [NSString stringWithFormat: @"%@ Options",course[@"name"]];
     

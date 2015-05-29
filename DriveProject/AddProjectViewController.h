@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "ProjectViewController.h"
-
-@interface AddProjectViewController : UIViewController
+#import "ViewController.h"
+#import "AppDelegate.h"
+#import "ProjectViewController.h"
+@class ViewController;
+@class ProjectViewController;
+@interface AddProjectViewController : UIViewController <UINavigationControllerDelegate>
 @property(nonatomic, strong) NSString *key;
 @property(nonatomic,strong) NSString *noteurl;
 @property (nonatomic, strong) AddProjectViewController *addProjectViewController;
 @property(nonatomic, strong) ProjectViewController  *projectViewController;
+@property(nonatomic, strong) ViewController  *viewController;
 @end
