@@ -131,9 +131,9 @@ static NSMutableArray *driveFiles;
     
   
     
-    NSString *post = [NSString stringWithFormat: @"name=%@&", self.projectname];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+    //NSString *post = [NSString stringWithFormat: @"name=%@&", self.projectname];
+    //NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    //NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     
@@ -143,10 +143,10 @@ static NSMutableArray *driveFiles;
     
     [request setURL:[NSURL URLWithString:fixedURL]];
     [request setHTTPMethod:@"DELETE"];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSLog(@"postdata = %@", postData);
+    //[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    //[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+   // [request setHTTPBody:postData];
+   // NSLog(@"postdata = %@", postData);
     NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
     if (conn){
         NSLog(@"Connection Successful");
