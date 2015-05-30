@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AddProjectViewController.h"
+#import "AddCustomerViewController.h"
+@class AddCustomerViewController;
 @class FileViewController;
 @class ProjectViewController;
 @class AddProjectViewController;
@@ -21,6 +23,7 @@
 @property (nonatomic, strong) AddProjectViewController *addProjectViewController;
 @property (nonatomic, strong) EditViewController *editViewController;
 @property (nonatomic, strong) LoginViewController *loginViewController;
+@property (nonatomic, strong) AddCustomerViewController *addCustomerViewController;
 //@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
 //@property (nonatomic, strong) ImageViewController *imageViewController;
 @property(nonatomic, strong) NSURL *URL;

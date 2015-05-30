@@ -11,6 +11,7 @@
 #import "AddProjectViewController.h"
 #import "EditViewController.h"
 #import "LoginViewController.h"
+#import "AddCustomerViewController.h"
 
 @interface ViewController () <NSURLSessionDelegate, UINavigationControllerDelegate>
 
@@ -22,6 +23,7 @@
 
 @implementation ViewController
 @synthesize projectViewController;
+@synthesize addCustomerViewController;
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
@@ -57,6 +59,12 @@
     
     
     
+    UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCustomer)];
+    
+    NSArray *actionButtonItems = @[addItem];
+    self.navigationItem.rightBarButtonItems = actionButtonItems;
+    
+    
     //UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:@"Info" style: UIBarButtonItemStylePlain    //target:self action:@selector(home)];
     
     // self.navigationItem.leftBarButtonItem = backButton;
@@ -80,11 +88,13 @@
 -(void)addCustomer{
     
     NSLog(@"navigation call for add");
-    //  [self.navigationController pushViewController: NotesViewController animated:YES];
+    self.addCustomerViewController.noteurl = _noteurl;
+    [self.navigationController pushViewController: addCustomerViewController animated:YES];
     
- //  [self.navigationController pushViewController:projectViewController animated:YES];
-    [self fetchFeed];
-    [self.tableView reloadData];
+    //  [self.navigationController pushViewController:customerViewController animated:YES];
+    // [self fetchFeed];
+    // [self.tableView reloadData];
+    
 }
 
 

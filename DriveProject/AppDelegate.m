@@ -14,6 +14,7 @@
 #import "DriveViewController.h"
 #import "EditViewController.h"
 #import "LoginViewController.h"
+#import "AddCustomerViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -29,6 +30,9 @@
     
     ViewController *vvc = [[ViewController alloc] init];
     lvc.viewController = vvc;
+    
+    AddCustomerViewController *acvc = [[AddCustomerViewController alloc] init];
+    vvc.addCustomerViewController = acvc;
     
    // AddProjectViewController *pvc = [[ProjectViewController alloc] init];
    // vvc.projectViewController = pvc;
