@@ -15,6 +15,7 @@
 #import "EditViewController.h"
 #import "LoginViewController.h"
 #import "AddCustomerViewController.h"
+#import "AccountViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -27,9 +28,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     LoginViewController *lvc = [[LoginViewController alloc] init];
     
-    
     ViewController *vvc = [[ViewController alloc] init];
     lvc.viewController = vvc;
+    
+    AccountViewController *avc =[[AccountViewController alloc] init];
+    lvc.accountViewController = avc;
     
     AddCustomerViewController *acvc = [[AddCustomerViewController alloc] init];
     vvc.addCustomerViewController = acvc;

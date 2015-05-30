@@ -11,6 +11,7 @@
 #import "ProjectViewController.h"
 #import "AddProjectViewController.h"
 #import "EditViewController.h"
+#import "AccountViewController.h"
 @interface LoginViewController () <NSURLSessionDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *welcome;
 @property (weak, nonatomic) IBOutlet UILabel *username2;
@@ -30,6 +31,7 @@
 @synthesize viewController;
 @synthesize username;
 @synthesize pwd;
+@synthesize accountViewController;
 
 
 
@@ -114,7 +116,7 @@
 
 - (IBAction)signup:(id)sender
 {
-    
+    [self.navigationController pushViewController:self.accountViewController animated:YES];
     
 }
 

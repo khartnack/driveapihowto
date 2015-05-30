@@ -13,6 +13,8 @@
 @class AddProjectViewController;
 @class EditViewController;
 @class ViewController;
+@class LoginViewController;
+@class AccountViewController;
 //@class ImageViewController;
 
 @interface LoginViewController : UIViewController
@@ -21,6 +23,8 @@
 @property (nonatomic, strong) AddProjectViewController *addProjectViewController;
 @property (nonatomic, strong) EditViewController *editViewController;
 @property (nonatomic, strong) ViewController *viewController;
+@property (nonatomic, strong) LoginViewController *loginViewController;
+@property (nonatomic, strong) AccountViewController *accountViewController;
 //@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
 //@property (nonatomic, strong) ImageViewController *imageViewController;
 @property(nonatomic, strong) NSURL *URL;

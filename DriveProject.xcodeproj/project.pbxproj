@@ -23,6 +23,8 @@
 		8386479E1B191E7B003F697F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8386479C1B191E7B003F697F /* LoginViewController.xib */; };
 		838647A21B19365C003F697F /* AddCustomerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838647A01B19365C003F697F /* AddCustomerViewController.m */; };
 		838647A31B19365C003F697F /* AddCustomerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838647A11B19365C003F697F /* AddCustomerViewController.xib */; };
+		838647A71B196D52003F697F /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838647A51B196D52003F697F /* AccountViewController.m */; };
+		838647A81B196D52003F697F /* AccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838647A61B196D52003F697F /* AccountViewController.xib */; };
 		8390F9AE1B0955C40048D6C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9AD1B0955C40048D6C3 /* main.m */; };
 		8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8390F9B01B0955C40048D6C3 /* AppDelegate.m */; };
 		8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8390F9B81B0955C40048D6C3 /* Images.xcassets */; };
@@ -72,6 +74,9 @@
 		8386479F1B19365C003F697F /* AddCustomerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCustomerViewController.h; sourceTree = "<group>"; };
 		838647A01B19365C003F697F /* AddCustomerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCustomerViewController.m; sourceTree = "<group>"; };
 		838647A11B19365C003F697F /* AddCustomerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCustomerViewController.xib; sourceTree = "<group>"; };
+		838647A41B196D52003F697F /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		838647A51B196D52003F697F /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		838647A61B196D52003F697F /* AccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountViewController.xib; sourceTree = "<group>"; };
 		8390F9A81B0955C40048D6C3 /* DriveProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DriveProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8390F9AC1B0955C40048D6C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8390F9AD1B0955C40048D6C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +141,9 @@
 			children = (
 				83686D341B16CBF300963C52 /* ViewController.h */,
 				83686D351B16CBF300963C52 /* ViewController.m */,
+				838647A41B196D52003F697F /* AccountViewController.h */,
+				838647A51B196D52003F697F /* AccountViewController.m */,
+				838647A61B196D52003F697F /* AccountViewController.xib */,
 				8386479F1B19365C003F697F /* AddCustomerViewController.h */,
 				838647A01B19365C003F697F /* AddCustomerViewController.m */,
 				838647A11B19365C003F697F /* AddCustomerViewController.xib */,
@@ -286,6 +294,7 @@
 				83686D481B17B10900963C52 /* EditViewController.xib in Resources */,
 				83686D3E1B16D71800963C52 /* AddProjectViewController.xib in Resources */,
 				838647A31B19365C003F697F /* AddCustomerViewController.xib in Resources */,
+				838647A81B196D52003F697F /* AccountViewController.xib in Resources */,
 				8390F9B91B0955C40048D6C3 /* Images.xcassets in Resources */,
 				83686D431B179A2300963C52 /* DriveViewController.xib in Resources */,
 				8386479E1B191E7B003F697F /* LoginViewController.xib in Resources */,
@@ -310,6 +319,7 @@
 				830B8ED81B0A59A00013C36A /* OptionsViewController.m in Sources */,
 				8386479D1B191E7B003F697F /* LoginViewController.m in Sources */,
 				8390F9D81B0959180048D6C3 /* GTLCommon_Sources.m in Sources */,
+				838647A71B196D52003F697F /* AccountViewController.m in Sources */,
 				8390F9B11B0955C40048D6C3 /* AppDelegate.m in Sources */,
 				83686D471B17B10900963C52 /* EditViewController.m in Sources */,
 				8390F9DD1B09596A0048D6C3 /* GTLDrive_Sources.m in Sources */,
