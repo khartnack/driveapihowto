@@ -27,7 +27,7 @@
 @property (strong) NSString *fileTitle;
 @property (strong, nonatomic) NSString *projectname;
 @property (strong, nonatomic) NSString *customer_key;
-//@property (strong, nonatomic) NSString *project_key;
+
 @end
 //static NSString* const DRIVE_IDENTITY_FOLDER = @"Text Folder for App";
 static NSString *const kKeychainItemName = @"Google Drive Quickstart";
@@ -41,7 +41,6 @@ static NSMutableArray *driveFiles;
 @synthesize driveService;
 @synthesize projectname;
 
-//@synthesize fileViewController;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,14 +61,6 @@ static NSMutableArray *driveFiles;
 {
     if([self.NameText.text isEqual: @""])
     {
-        
-        /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error"
-         message:@"Please fill in the name."
-         delegate:self
-         cancelButtonTitle:@"OK"
-         
-         otherButtonTitles:nil];
-         [alert show];*/
         
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"Please Provide A Name."
@@ -130,12 +121,6 @@ static NSMutableArray *driveFiles;
 - (IBAction)deleteProject:(id)sender
 {
         NSLog(@"delete key %@", _project_key);
-    
-  
-    
-    //NSString *post = [NSString stringWithFormat: @"name=%@&", self.projectname];
-    //NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    //NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
     
@@ -145,10 +130,6 @@ static NSMutableArray *driveFiles;
     
     [request setURL:[NSURL URLWithString:fixedURL]];
     [request setHTTPMethod:@"DELETE"];
-    //[request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    //[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-   // [request setHTTPBody:postData];
-   // NSLog(@"postdata = %@", postData);
     NSURLConnection *conn = [[NSURLConnection alloc]initWithRequest:request delegate:self];
     if (conn){
         NSLog(@"Connection Successful");

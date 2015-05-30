@@ -17,13 +17,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *customerLabel;
 
 @property NSString *customer;
-//@property NSString *user_key;
 @end
 
 @implementation AddCustomerViewController
 @synthesize viewController;
 @synthesize user_key;
-//@synthesize addProjectViewController;
+
 
 
 -(void)viewWillAppear:(BOOL)animated
@@ -40,13 +39,6 @@
     if([self.customerText.text isEqual: @""])
     {
         
-        /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error"
-         message:@"Please fill in the name."
-         delegate:self
-         cancelButtonTitle:@"OK"
-         
-         otherButtonTitles:nil];
-         [alert show];*/
         
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"Please Provide A Name."
@@ -93,11 +85,6 @@
         NSLog(@"Connection Failed");
     }
     
-    //  [self.navigationController pushViewController:self.viewController animated:YES];
-    
-    //[self.navigationController popToRootViewControllerAnimated:YES];
-  //  self.viewController.user_key = self.user_key;
-  //  NSLog(@"user key %@", self.user_key);
       [self.navigationController popViewControllerAnimated:YES];
 }
 

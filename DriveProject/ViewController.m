@@ -1,5 +1,5 @@
 //
-//  CustomerViewController.m
+//  ViewController.m
 //  DriveProject
 //
 //  Created by Dave Beltramini on 5/27/15.
@@ -17,8 +17,6 @@
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, copy) NSArray *courses;
-//@property (nonatomic, strong) NSString *key;
-
 @end
 
 @implementation ViewController
@@ -41,17 +39,12 @@
         _session = [NSURLSession sessionWithConfiguration:config
                                                  delegate:self
                                             delegateQueue:nil];
-        // Set the tab bar item's title
-        //     self.tabBarItem.title = @"Notes";
         
        [self fetchFeed];
     }
     return self;
 }
 
-//- (void)viewDidLoad
-//{
-//   [super viewDidLoad];
 
 -(void)viewDidAppear:(BOOL)animated
 {
@@ -92,10 +85,6 @@
           NSLog(@"_user_key %@", self.addCustomerViewController.user_key);
     [self.navigationController pushViewController:addCustomerViewController animated:YES];
     
-    //  [self.navigationController pushViewController:customerViewController animated:YES];
-    // [self fetchFeed];
-    // [self.tableView reloadData];
-    
 }
 
 
@@ -106,8 +95,6 @@
     
     self.user_key = _user_key;
     NSLog(@"_user_key in fetchfeed %@", self.user_key);
-    //https://bookapi.bignerdranch.com/private/courses.json
-   //NSString *someText = [NSString stringWithFormat: @"http://cs496sp2015.appspot.com/customer/%@",noteurl];
     NSString *requestString = [NSString stringWithFormat: @"http://may29proj.appspot.com/customer&id=%@/", self.user_key];
     NSLog(@"requestString %@", requestString);
     NSURL *url = [NSURL URLWithString:requestString];
@@ -166,33 +153,23 @@
     //NSURL *URL = [NSURL URLWithString:course[@"someText"]];
     
     
-    
     NSLog(@"--%@",URL);
     
     self.projectViewController.title = course[@"name"];
     self.projectViewController.URL = URL;
     self.projectViewController.noteurl = noteurl;
-    //self.projectViewController.customer = course[@"key"];
     
     [self.navigationController pushViewController:self.projectViewController animated:YES];
 }
 
-
-
-
-- (void)  URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
- didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
-   completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
-    NSLog(@"here");
-    NSURLCredential *cred =
-    [NSURLCredential credentialWithUser:@"BigNerdRanch"
-                               password:@"AchieveNerdvana"
-     //                           persistence:NSURLCredentialPersistenceNone];
-                            persistence:NSURLCredentialPersistenceForSession];
-    completionHandler(NSURLSessionAuthChallengeUseCredential, cred);
+    
     
 }
+
+
+
 
 
 

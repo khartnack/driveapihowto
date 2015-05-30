@@ -43,13 +43,6 @@
     if([self.projectField.text isEqual: @""])
     {
        
-        /* UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"error"
-         message:@"Please fill in the name."
-         delegate:self
-         cancelButtonTitle:@"OK"
-         
-         otherButtonTitles:nil];
-         [alert show];*/
         
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                        message:@"Please Provide A Name."
@@ -96,9 +89,6 @@
         NSLog(@"Connection Failed");
     }
     
-  //  [self.navigationController pushViewController:self.viewController animated:YES];
-    
-    //[self.navigationController popToRootViewControllerAnimated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

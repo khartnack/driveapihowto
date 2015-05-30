@@ -1,5 +1,5 @@
 //
-//  CustomerViewController.h
+//  ViewController.h
 //  DriveProject
 //
 //  Created by Dave Beltramini on 5/27/15.
@@ -15,7 +15,6 @@
 @class AddProjectViewController;
 @class EditViewController;
 @class LoginViewController;
-//@class ImageViewController;
 
 @interface ViewController : UITableViewController {ProjectViewController *projectViewController;}
 @property (nonatomic, strong) FileViewController *fileViewController;
@@ -24,8 +23,6 @@
 @property (nonatomic, strong) EditViewController *editViewController;
 @property (nonatomic, strong) LoginViewController *loginViewController;
 @property (nonatomic, strong) AddCustomerViewController *addCustomerViewController;
-//@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
-//@property (nonatomic, strong) ImageViewController *imageViewController;
 @property(nonatomic, strong) NSURL *URL;
 @property(nonatomic,strong) NSString *noteurl;
 @property(nonatomic, strong) NSString *user_key;

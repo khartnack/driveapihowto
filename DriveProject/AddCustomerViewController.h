@@ -17,7 +17,6 @@
 @interface AddCustomerViewController : UIViewController <UINavigationControllerDelegate>
 @property(nonatomic, strong) NSString *user_key;
 @property(nonatomic,strong) NSString *noteurl;
-//@property (nonatomic, strong) AddProjectViewController *addProjectViewController;
 @property(nonatomic, strong) ProjectViewController  *projectViewController;
 @property(nonatomic, strong) ViewController  *viewController;
 @property(nonatomic,strong) AddCustomerViewController *addCustomerViewController;

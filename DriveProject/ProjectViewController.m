@@ -189,21 +189,11 @@
 
 
 
-- (void)  URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task
- didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
-   completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler
+- (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
-    NSLog(@"here");
-    NSURLCredential *cred =
-    [NSURLCredential credentialWithUser:@"BigNerdRanch"
-                               password:@"AchieveNerdvana"
-     //                           persistence:NSURLCredentialPersistenceNone];
-                            persistence:NSURLCredentialPersistenceForSession];
-    completionHandler(NSURLSessionAuthChallengeUseCredential, cred);
+    
     
 }
-
-
 
 
 
