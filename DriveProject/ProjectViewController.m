@@ -16,7 +16,6 @@
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, copy) NSArray *courses;
-//@property (nonatomic, strong) NSInteger *key;
 
 @end
 
@@ -72,13 +71,12 @@
     
     NSLog(@"viewWillAppear");
    
-  //  [self.tableView reloadData];
+
     
     
 }
 
 -(void)tableReload{
-  //  [self fetchFeed];
     [self.tableView reloadData];
 }
 
@@ -89,9 +87,6 @@
     self.addProjectViewController.noteurl = _noteurl;
      [self.navigationController pushViewController: addProjectViewController animated:YES];
     
-    //  [self.navigationController pushViewController:customerViewController animated:YES];
-   // [self fetchFeed];
-    // [self.tableView reloadData];
 
 }
 
@@ -125,8 +120,7 @@
          NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                     options:0
                                                                       error:&err];
-         
-         // NSLog(@"err %@",err);
+
          
          NSLog(@"jsonObject -->%@", jsonObject);
          self.courses = jsonObject[@"projects"];
@@ -161,7 +155,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self fetchFeed];
-    //NSLog(@"called");
     NSDictionary *course = self.courses[indexPath.row];
     
     NSString *noteurl = course[@"key"];
@@ -170,10 +163,7 @@
     
     NSString *someText = [NSString stringWithFormat: @"http://may29proj.appspot.com/customer/%@",noteurl];
     NSURL *URL= [NSURL URLWithString:someText];
-   //NSString *someTitle = [NSString stringWithFormat: @"%@ Options",course[@"name"]];
-    
-    //NSURL *URL = [NSURL URLWithString:course[@"someText"]];
-    
+
     
     
     NSLog(@"--%@",URL);
@@ -185,8 +175,6 @@
     
     [self.navigationController pushViewController:self.driveViewController animated:YES];
 }
-
-
 
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error

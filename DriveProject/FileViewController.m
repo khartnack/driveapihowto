@@ -106,10 +106,8 @@ static NSMutableArray *driveFiles;
 }
 
 
-//- (void)viewDidLoad
 -(void)viewWillAppear:(BOOL)animated
 {
-    //  [super viewDidLoad];
     [super viewWillAppear:animated];
     // Initialize the drive service & load existing credentials from the keychain if available
     self.driveService = [[GTLServiceDrive alloc] init];
@@ -150,7 +148,7 @@ static NSMutableArray *driveFiles;
                          [driveService executeQuery:query
                                   completionHandler:^(GTLServiceTicket *ticket, GTLDriveFile *file,
                                                       NSError *error) {
-                                      //NSString * identityDirId = nil;
+                                      
                                       if (error == nil) {
                                           
                                           if (file) {

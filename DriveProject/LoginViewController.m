@@ -109,8 +109,7 @@
      }];
     [dataTask resume];
     NSLog(@"login key %@", _user_key);
-  //  self.viewController.user_key = _user_key;
-  //  [self.navigationController pushViewController:self.viewController animated:YES];
+
     
 }
 

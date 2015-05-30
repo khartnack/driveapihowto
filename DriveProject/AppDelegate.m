@@ -37,17 +37,13 @@
     AddCustomerViewController *acvc = [[AddCustomerViewController alloc] init];
     vvc.addCustomerViewController = acvc;
     
-   // AddProjectViewController *pvc = [[ProjectViewController alloc] init];
-   // vvc.projectViewController = pvc;
   
     ProjectViewController *pvc = [[ProjectViewController alloc] init];
     vvc.projectViewController = pvc;
     
     AddProjectViewController *apvc = [[AddProjectViewController alloc] init];
     pvc.addProjectViewController = apvc;
-    //vvc.addProjectViewController = apvc;
-   // ViewController *vvvc = [[ViewController alloc] init];
-   // apvc.viewController = vvvc;
+
     
     DriveViewController *opvc = [[DriveViewController alloc] init];
     pvc.driveViewController = opvc;

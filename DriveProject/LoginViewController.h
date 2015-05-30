@@ -15,7 +15,7 @@
 @class ViewController;
 @class LoginViewController;
 @class AccountViewController;
-//@class ImageViewController;
+
 
 @interface LoginViewController : UIViewController
 @property (nonatomic, strong) FileViewController *fileViewController;
@@ -25,8 +25,6 @@
 @property (nonatomic, strong) ViewController *viewController;
 @property (nonatomic, strong) LoginViewController *loginViewController;
 @property (nonatomic, strong) AccountViewController *accountViewController;
-//@property (nonatomic, strong) NotesInfoViewController *notesInfoViewController;
-//@property (nonatomic, strong) ImageViewController *imageViewController;
 @property(nonatomic, strong) NSURL *URL;
 @property(nonatomic,strong) NSString *noteurl;
 @property(nonatomic, strong) NSString *user_key;
