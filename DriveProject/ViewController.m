@@ -30,6 +30,7 @@
     self = [super initWithStyle:style];
     if (self) {
         self.navigationItem.title = @"Customers";
+        
         NSLog(@"instance type key %@", _user_key);
         self.user_key = _user_key;
         NSURLSessionConfiguration *config =
@@ -41,7 +42,7 @@
         // Set the tab bar item's title
         //     self.tabBarItem.title = @"Notes";
         
-        [self fetchFeed];
+       // [self fetchFeed];
     }
     return self;
 }
@@ -54,7 +55,7 @@
 {
     [super viewWillAppear:animated];
     
-    
+    self.user_key = _user_key;
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
     self.user_key=_user_key;
@@ -66,23 +67,7 @@
     NSArray *actionButtonItems = @[addItem];
     self.navigationItem.rightBarButtonItems = actionButtonItems;
     
-    
-    //UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:@"Info" style: UIBarButtonItemStylePlain    //target:self action:@selector(home)];
-    
-    // self.navigationItem.leftBarButtonItem = backButton;
-    
-    /* if(backButton.BNRQuizViewController == nil) {
-     BNRQuizViewController  *view2 = [[BNRQuizViewController  alloc] initWithNibName:@"View2" bundle:[NSBundle mainBundle]];
-     self.BNRQuizViewController  = view2;
-     // [view2 release];
-     }
-     //test
-     [self.navigationController pushViewController:self.BNRQuizViewController animated:YES];*/
-    
-    //UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCustomer)];
-    
-    //NSArray *actionButtonItems = @[addItem];
-   // self.navigationItem.rightBarButtonItems = actionButtonItems;
+    [self fetchFeed];
     
     
 }
@@ -109,9 +94,12 @@
 - (void)fetchFeed
 {
     
+    self.user_key = _user_key;
+    NSLog(@"_user_key in fetchfeed %@", self.user_key);
     //https://bookapi.bignerdranch.com/private/courses.json
-    NSString *requestString = @"http://may29proj.appspot.com/customer/";
-    
+   //NSString *someText = [NSString stringWithFormat: @"http://cs496sp2015.appspot.com/customer/%@",noteurl];
+    NSString *requestString = [NSString stringWithFormat: @"http://may29proj.appspot.com/customer&id=%@/", self.user_key];
+    NSLog(@"requestString %@", requestString);
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *req = [NSURLRequest requestWithURL:url  cachePolicy:NSURLRequestReloadIgnoringCacheData
                                      timeoutInterval:60.0];
