@@ -57,7 +57,7 @@
     {
         self.customer = self.customerText.text;
     }
-    NSLog(@"key %@", _noteurl);
+    NSLog(@"on add key %@", user_key);
     
     self.user_key = user_key;
     

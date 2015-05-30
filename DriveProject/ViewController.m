@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, copy) NSArray *courses;
-@property (nonatomic, strong) NSString *key;
+//@property (nonatomic, strong) NSString *key;
 
 @end
 
@@ -30,7 +30,8 @@
     self = [super initWithStyle:style];
     if (self) {
         self.navigationItem.title = @"Customers";
-        
+        NSLog(@"instance type key %@", _user_key);
+        self.user_key = _user_key;
         NSURLSessionConfiguration *config =
         [NSURLSessionConfiguration defaultSessionConfiguration];
         
@@ -56,7 +57,8 @@
     
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
-    
+    self.user_key=_user_key;
+    NSLog(@"did load %@", _user_key);
     
     
     UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addCustomer)];
@@ -88,9 +90,12 @@
 -(void)addCustomer{
     
     NSLog(@"navigation call for add");
+    
     self.addCustomerViewController.noteurl = _noteurl;
     self.addCustomerViewController.user_key = _user_key;
-    [self.navigationController pushViewController: addCustomerViewController animated:YES];
+    NSLog(@"_user_key %@", _user_key);
+          NSLog(@"_user_key %@", self.addCustomerViewController.user_key);
+    [self.navigationController pushViewController:addCustomerViewController animated:YES];
     
     //  [self.navigationController pushViewController:customerViewController animated:YES];
     // [self fetchFeed];

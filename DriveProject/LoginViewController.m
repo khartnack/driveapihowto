@@ -96,14 +96,15 @@
     NSLog(@"user key %@", _user_key);
     
          dispatch_async(dispatch_get_main_queue(), ^{
-             
+             self.viewController.user_key = _user_key;
+             [self.navigationController pushViewController:self.viewController animated:YES];
              
          });
      }];
     [dataTask resume];
-    
-   // self.viewController.user_key = _user_key;
-    [self.navigationController pushViewController:self.viewController animated:YES];
+    NSLog(@"login key %@", _user_key);
+  //  self.viewController.user_key = _user_key;
+  //  [self.navigationController pushViewController:self.viewController animated:YES];
     
 }
 
