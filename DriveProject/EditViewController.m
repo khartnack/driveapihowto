@@ -104,7 +104,7 @@ static NSMutableArray *driveFiles;
     
   
     
-    NSString *fixedURL = [NSString stringWithFormat:@"http://cs496sp2015.appspot.com/project/%@",_project_key];
+    NSString *fixedURL = [NSString stringWithFormat:@"http://may29proj.appspot.com/project/%@",_project_key];
     
     NSLog(@"noteurl on edit %@", fixedURL);
     [request setURL:[NSURL URLWithString:fixedURL]];
@@ -140,7 +140,7 @@ static NSMutableArray *driveFiles;
     
     
     
-    NSString *fixedURL = [NSString stringWithFormat:@"http://cs496sp2015.appspot.com/project/%@", _project_key];
+    NSString *fixedURL = [NSString stringWithFormat:@"http://may29proj.appspot.com/project/%@", _project_key];
     NSLog(@"fixedURL on delete %@", fixedURL);
     
     [request setURL:[NSURL URLWithString:fixedURL]];

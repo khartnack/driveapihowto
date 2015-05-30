@@ -84,8 +84,10 @@ static NSMutableArray *driveFiles;
     };
     
     cameraUI.delegate = self;
-    
-    [self presentViewController:cameraUI animated:YES completion:NULL];
+   
+   [self presentViewController:cameraUI animated:YES completion:NULL];
+  // [self presentViewController:[self createAuthController] animated:YES completion:NULL];
+   //[cameraUI presentViewController:[self createAuthController] animated:YES];
     
     if (![self isAuthorized])
     {
@@ -214,7 +216,7 @@ static NSMutableArray *driveFiles;
     
     [self presentViewController:cameraUI animated:YES completion:NULL];
     
-    if (![self isAuthorized])
+   if (![self isAuthorized])
     {
         //Not yet authorized, request authorization and push the login UI onto the navigation stack.
         [cameraUI pushViewController:[self createAuthController] animated:YES];

@@ -168,7 +168,7 @@
     
     NSLog(@"--%@",noteurl);
     
-    NSString *someText = [NSString stringWithFormat: @"http://cs496sp2015.appspot.com/customer/%@",noteurl];
+    NSString *someText = [NSString stringWithFormat: @"http://may29proj.appspot.com/customer/%@",noteurl];
     NSURL *URL= [NSURL URLWithString:someText];
    //NSString *someTitle = [NSString stringWithFormat: @"%@ Options",course[@"name"]];
     

@@ -22,7 +22,13 @@
 @synthesize username;
 @synthesize pwd;
 
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.usernameText.text = @"";
+    self.passwordText.text = @"";
+    // Do any additional setup after loading the view from its nib.
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
