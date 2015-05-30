@@ -21,6 +21,7 @@
 @property (nonatomic, copy) NSArray *courses;
 @property (nonatomic, copy) NSArray *users;
 @property (nonatomic, strong) NSString *key;
+@property (nonatomic, strong) NSString *users3;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *pwd;
 @end
@@ -29,6 +30,26 @@
 @synthesize viewController;
 @synthesize username;
 @synthesize pwd;
+
+
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+   
+        self.navigationItem.title = @"Categories";
+        
+        NSURLSessionConfiguration *config =
+        [NSURLSessionConfiguration defaultSessionConfiguration];
+        
+        _session = [NSURLSession sessionWithConfiguration:config
+                                                 delegate:self
+                                            delegateQueue:nil];
+        NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
+        NSLog(@"bi%@", bundleIdentifier);
+        //[self fetchFeed];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,12 +67,14 @@
     
     self.username = self.usernameText.text;
     self.pwd = self.pwdTxt.text;
+    NSLog(@"password %@", self.pwd);
     
-    NSString *requestString = [NSString stringWithFormat:@"http://may29sp2015.appspot.com/user&username=%@&pwd=%@",self.username, self.pwd];
+    NSString *requestString = [NSString stringWithFormat:@"http://may29proj.appspot.com/user&username=%@&pwd=%@/",self.username, self.pwd];
+    NSLog(@"password %@", requestString);
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *req = [NSURLRequest requestWithURL:url  cachePolicy:NSURLRequestReloadIgnoringCacheData
                                      timeoutInterval:60.0];
-    
+    NSLog(@"req %@", req);
     NSURLSessionDataTask *dataTask =
     [self.session dataTaskWithRequest:req
                     completionHandler:
@@ -60,9 +83,9 @@
          NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data
                                                                     options:0
                                                                       error:nil];
-    
-
-    
+    NSLog(@"username %@", jsonObject);
+ 
+    //     self.users3 = jsonObject[@"users"];
     NSArray *users = jsonObject[@"users"];
     for ( NSDictionary *user in users)
     {
