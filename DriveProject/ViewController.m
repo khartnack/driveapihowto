@@ -42,7 +42,7 @@
         // Set the tab bar item's title
         //     self.tabBarItem.title = @"Notes";
         
-       // [self fetchFeed];
+       [self fetchFeed];
     }
     return self;
 }
@@ -67,9 +67,17 @@
     NSArray *actionButtonItems = @[addItem];
     self.navigationItem.rightBarButtonItems = actionButtonItems;
     
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithTitle:@"Logout" style: UIBarButtonItemStylePlain    target:self action:@selector(logout)];
+    self.navigationItem.leftBarButtonItem = backButton;
+    
     [self fetchFeed];
     
     
+}
+
+-(void)logout{
+     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(void)addCustomer{
