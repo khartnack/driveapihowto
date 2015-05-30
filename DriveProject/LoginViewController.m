@@ -51,8 +51,11 @@
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.usernameText.text = @"";
+    self.pwdTxt.text = @"";
     // Do any additional setup after loading the view from its nib.
 }
 
