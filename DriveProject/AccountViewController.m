@@ -76,7 +76,7 @@
     NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
-    NSString *fixedURL = [NSString stringWithFormat:@"http://may29proj.appspot.com/customer"];
+    NSString *fixedURL = [NSString stringWithFormat:@"http://may29proj.appspot.com/user"];
     
     [request setURL:[NSURL URLWithString:fixedURL]];
     [request setHTTPMethod:@"POST"];
