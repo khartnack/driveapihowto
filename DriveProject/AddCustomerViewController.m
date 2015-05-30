@@ -26,6 +26,14 @@
 //@synthesize addProjectViewController;
 
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.customerText.text = @"";
+
+    // Do any additional setup after loading the view from its nib.
+}
+
 
 - (IBAction)addCustomer:(id)sender
 {

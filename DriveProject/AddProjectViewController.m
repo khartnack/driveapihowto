@@ -22,6 +22,14 @@
 @synthesize viewController;
 @synthesize addProjectViewController;
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.projectField.text = @"";
+    
+    // Do any additional setup after loading the view from its nib.
+}
+
 - (void)setKey:(NSString *)key
 {
     _key = key;
