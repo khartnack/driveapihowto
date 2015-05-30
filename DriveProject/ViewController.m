@@ -25,6 +25,8 @@
 @synthesize projectViewController;
 @synthesize addCustomerViewController;
 
+
+
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -51,9 +53,9 @@
 //{
 //   [super viewDidLoad];
 
--(void)viewWillAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    [super viewDidAppear:animated];
     
     self.user_key = _user_key;
     [self.tableView registerClass:[UITableViewCell class]
