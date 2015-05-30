@@ -17,20 +17,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *customerLabel;
 
 @property NSString *customer;
-@property NSString *user_key;
+//@property NSString *user_key;
 @end
 
 @implementation AddCustomerViewController
 @synthesize viewController;
+@synthesize user_key;
 //@synthesize addProjectViewController;
 
-- (void)setKey:(NSString *)key
-{
-    _key = key;
-    
-    NSLog(@"--key%@",key);
-    
-}
+
 
 - (IBAction)addCustomer:(id)sender
 {
@@ -64,11 +59,11 @@
     }
     NSLog(@"key %@", _noteurl);
     
-    self.user_key = _user_key;
+    self.user_key = user_key;
     
     
     
-    
+       NSLog(@"user key %@", self.user_key);
     
     NSString *post = [NSString stringWithFormat: @"name=%@&user_key=%@&", self.customer, self.user_key];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -92,8 +87,10 @@
     
     //  [self.navigationController pushViewController:self.viewController animated:YES];
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
-    //  [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popToRootViewControllerAnimated:YES];
+  //  self.viewController.user_key = self.user_key;
+  //  NSLog(@"user key %@", self.user_key);
+      [self.navigationController popViewControllerAnimated:YES];
 }
 
 

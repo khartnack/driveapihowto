@@ -89,6 +89,7 @@
     
     NSLog(@"navigation call for add");
     self.addCustomerViewController.noteurl = _noteurl;
+    self.addCustomerViewController.user_key = _user_key;
     [self.navigationController pushViewController: addCustomerViewController animated:YES];
     
     //  [self.navigationController pushViewController:customerViewController animated:YES];
@@ -104,7 +105,7 @@
 {
     
     //https://bookapi.bignerdranch.com/private/courses.json
-    NSString *requestString = @"http://cs496sp2015.appspot.com/customer/";
+    NSString *requestString = @"http://may29proj.appspot.com/customer/";
     
     NSURL *url = [NSURL URLWithString:requestString];
     NSURLRequest *req = [NSURLRequest requestWithURL:url  cachePolicy:NSURLRequestReloadIgnoringCacheData
