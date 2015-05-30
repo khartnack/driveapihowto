@@ -46,19 +46,22 @@
     return self;
 }
 
-//- (void)viewDidLoad
-//{
-//   [super viewDidLoad];
+- (void)viewDidLoad
+{   [super viewDidLoad];
+    [self.tableView registerClass:[UITableViewCell class]
+           forCellReuseIdentifier:@"UITableViewCell"];
+    
+}
 
--(void)viewWillAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    [super viewDidAppear:animated];
     [self fetchFeed];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tableReload) name:@"tableReload" object:nil];
     
-    [self.tableView registerClass:[UITableViewCell class]
-           forCellReuseIdentifier:@"UITableViewCell"];
+   // [self.tableView registerClass:[UITableViewCell class]
+   //        forCellReuseIdentifier:@"UITableViewCell"];
     
     
     
@@ -68,8 +71,8 @@
      self.navigationItem.rightBarButtonItems = actionButtonItems;
     
     NSLog(@"viewWillAppear");
-    
-  //   [self.tableView reloadData];
+   
+  //  [self.tableView reloadData];
     
     
 }
@@ -144,7 +147,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell =
+    UITableViewCell *cell = //[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                     forIndexPath:indexPath];
     
