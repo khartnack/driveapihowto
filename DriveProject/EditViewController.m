@@ -121,7 +121,7 @@ static NSMutableArray *driveFiles;
     }
     
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
     
     
 }
@@ -157,7 +157,7 @@ static NSMutableArray *driveFiles;
     }
     
     
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
